@@ -3922,7 +3922,7 @@ function guess_answer(button_id){
     }
     else{
         document.getElementById("display_feedback").innerHTML = `Wrong! The answer was: 
-        ${current_question["answer"]}. ${current_question[current_question["answer"]]}` ;
+        ${current_question[current_question["answer"]]}` ;
         //console.log(`Wrong! The answer was: ${current_question["answer"]}. ${current_question[current_question["answer"]]}`);
     }
     document.getElementById("display_score").innerHTML = `Score: ${score}`;
