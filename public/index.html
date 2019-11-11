@@ -7,24 +7,43 @@
     <title>Trivia Mock</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <!-- <script type="text/javascript" src="../app.js"></script> -->
-    <script type="text/javascript" src="javascripts/buttons.js"></script>  
-    <script type="text/javascript" src="javascripts/start_game.js"></script>          
+    <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
+    <script type="text/javascript" src="javascripts/start_game.js"></script>  
+    <script type="module" src="javascripts/trivia.js"></script>        
 </head>
-<body>
+<body onload="load()">
     <h1>Welcome to Trivia Smash!</h1>
-    <div id="start_game">
-        <button id="start" onclick="start_game()">Start a New Game!</button>
-    </div>
+    <button id="start" onclick="start_game()">Start a New Game!</button>
+    <br><br>
+    <div id="display_question_number"></div>
+    <br>
     <div id="current_question">  
-        <button id="next_question" onclick="display_next_question()">Next</button>
+        <div id="display_question"></div>
+    </div>
+    <br>    
+  
+    <div id="display_choices">
     </div>
     <br>
     <div id="guess_buttons">
-        Make a Guess: 
-        <button id= "guess_A" onclick="guess_answer(this.id)">A</button>
-        <button id= "guess_B" onclick="guess_answer(this.id)">B</button>
-        <button id= "guess_C" onclick="guess_answer(this.id)">C</button>
-        <button id= "guess_D" onclick="guess_answer(this.id)">D</button>
+        <button id= "guess_A" onclick="guess_answer(this.id)">
+            <div id="A_button_text"></div>
+        </button>
+        <button id= "guess_B" onclick="guess_answer(this.id)">
+            <div id="B_button_text"></div>
+        </button>
+        <button id= "guess_C" onclick="guess_answer(this.id)">
+            <div id="C_button_text"></div>
+        </button>
+        <button id= "guess_D" onclick="guess_answer(this.id)">
+            <div id="D_button_text"></div>
+        </button>
     </div>
+    <br>
+    <div id="display_feedback"></div>
+    <br>
+    <div id="display_score"></div>
+    <br>
+    <button id="next_question" onclick="display_next_question()">Next Question</button>
 </body>
 </html>

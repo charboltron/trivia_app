@@ -6,7 +6,6 @@ var path = require('path');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join('./public')));
 
-
 // app.get('/', (req, res)=>{
 //     res.sendFile('./public/index.html', { root: __dirname });
 //   })
