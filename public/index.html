@@ -13,6 +13,8 @@
 </head>
 <body onload="load()">
     <h1>Welcome to Trivia Smash!</h1>
+    <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
+    <br>
     <button id="start" onclick="start_game()">Start a New Game!</button>
     <br><br>
     <div id="display_question_number"></div>
@@ -45,5 +47,7 @@
     <div id="display_score"></div>
     <br>
     <button id="next_question" onclick="display_next_question()">Next Question</button>
+    <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
+    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
 </body>
 </html>

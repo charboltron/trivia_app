@@ -5,6 +5,7 @@ var question_set = [];
 var current_question;
 var guessed;
 var started =false;
+var sound = false;
 
 const trivia = [{
     "question": "A flashing red traffic light signifies that a driver should do what?",
@@ -3919,11 +3920,23 @@ function guess_answer(button_id){
         console.log("You got it!");
         score++;
         document.getElementById("display_feedback").innerHTML = `You got it!`;
+        if(sound){
+            var chime = document.getElementById("audio_correct"); 
+            chime.play(); 
+        }
     }
     else{
         document.getElementById("display_feedback").innerHTML = `Wrong! The answer was: 
         ${current_question[current_question["answer"]]}` ;
+        if(sound){
+            var chime = document.getElementById("audio_incorrect"); 
+            chime.play(); 
+        }
         //console.log(`Wrong! The answer was: ${current_question["answer"]}. ${current_question[current_question["answer"]]}`);
     }
     document.getElementById("display_score").innerHTML = `Score: ${score}`;
+}
+
+function toggle_sound(){
+    sound = !sound;
 }
