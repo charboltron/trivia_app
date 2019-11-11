@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Mock</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <!-- <script type="text/javascript" src="../app.js"></script> -->
+    <script type="text/javascript" src="javascripts/buttons.js"></script>  
+    <script type="text/javascript" src="javascripts/start_game.js"></script>          
+</head>
+<body>
+    <h1>Welcome to Trivia Smash!</h1>
+    <div id="start_game">
+        <button id="start" onclick="start_game()">Start a New Game!</button>
+    </div>
+    <div id="current_question">  
+        <button id="next_question" onclick="display_next_question()">Next</button>
+    </div>
+    <br>
+    <div id="guess_buttons">
+        Make a Guess: 
+        <button id= "guess_A" onclick="guess_answer(this.id)">A</button>
+        <button id= "guess_B" onclick="guess_answer(this.id)">B</button>
+        <button id= "guess_C" onclick="guess_answer(this.id)">C</button>
+        <button id= "guess_D" onclick="guess_answer(this.id)">D</button>
+    </div>
+</body>
+</html>
