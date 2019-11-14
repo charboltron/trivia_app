@@ -3868,8 +3868,7 @@ function display_next_question(){
     if(!started){return;}
     if(count === 10){
         document.getElementById("display_question_number").innerHTML = ``;
-        document.getElementById("display_question").innerHTML = "GAME OVER!";
-        document.getElementById("display_choices").innerHTML = "Start a new game or fuck off brat"
+        document.getElementById("display_question").innerHTML = "GAME OVER! Start a new game?";
         started = false;
         return;
     }
