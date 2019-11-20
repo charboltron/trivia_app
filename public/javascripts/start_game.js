@@ -13,7 +13,7 @@ var times_up;
 var question_count;
 var score;
 var current_question;
-var question_set = [];
+var answer_options = [];
 
 //Bools
 var guessed;
@@ -88,7 +88,7 @@ function display_next_question(){
     document.getElementById("display_feedback").innerHTML = ``;
 
     //Prepare the question set and the current question
-    question_set = [];
+    answer_options = [];
     current_question = trivia[question_count];
     //console.log(current_question.question);
     console.log(current_question.difficulty);
@@ -103,14 +103,14 @@ function display_next_question(){
     let difficulty = current_question.difficulty
     difficulty = difficulty.charAt(0).toUpperCase() + difficulty.slice(1)
     
-    question_set.push(ans, wrong_1, wrong_2, wrong_3);
-    question_set = shuffle(question_set);
+    answer_options.push(ans, wrong_1, wrong_2, wrong_3);
+    answer_options = shuffle(answer_options);
     
     //Put the question/choices on the buttons
-    document.getElementById("A_button_text").innerHTML = question_set[0];
-    document.getElementById("B_button_text").innerHTML = question_set[1];
-    document.getElementById("C_button_text").innerHTML = question_set[2];
-    document.getElementById("D_button_text").innerHTML = question_set[3];
+    document.getElementById("A_button_text").innerHTML = answer_options[0];
+    document.getElementById("B_button_text").innerHTML = answer_options[1];
+    document.getElementById("C_button_text").innerHTML = answer_options[2];
+    document.getElementById("D_button_text").innerHTML = answer_options[3];
 
     //Display text for questions
     document.getElementById("display_question_number").innerHTML = `QUESTION ${question_count+1}: `;
@@ -140,16 +140,16 @@ function guess_answer(button_id){
     var guess_letter;
     switch(button_id){
         case "guess_A":
-            guess_letter = question_set[0];
+            guess_letter = answer_options[0];
             break;
             case "guess_B":
-            guess_letter = question_set[1];
+            guess_letter = answer_options[1];
             break;
             case "guess_C":
-            guess_letter = question_set[2];
+            guess_letter = answer_options[2];
             break;
             case "guess_D":
-            guess_letter = question_set[3];
+            guess_letter = answer_options[3];
             break;
         default:
             guess_letter="None"; //??
