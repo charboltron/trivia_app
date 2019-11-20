@@ -1,0 +1,45 @@
+{
+    "response_code":0,"results":[
+        {
+        "category":"History",
+        "type":"multiple",
+        "difficulty": "medium",
+        "question": "Where and when was the first cardboard box made for industrial use?",
+        "correct_answer":"England, 1817",
+        "incorrect_answers":["United States, 1817","England, 1917","United States, 1917"]
+        },
+    {
+        "category":"Entertainment: 
+        Cartoon & Animations",
+        "type":"multiple",
+        "difficulty":"medium",
+        "question":"In &quot;SpongeBob SquarePants&quot;, what is the name of Sandy Cheek&#039;s place of residence?",
+        "correct_answer":"Sandy&#039;s Treedome",
+        "incorrect_answers":["&quot;The Dome&quot;","Sandy&#039;s Bubble","Auquatic Reseach Centre"]
+        },
+    {
+        "category":"History",
+        "type":"multiple",
+        "difficulty":"hard",
+        "question":"When was the &quot;Siege of Leningrad&quot; lifted during World War II?",
+        "correct_answer":"January 1944",
+        "incorrect_answers":["September 1943","November 1943","March 1944"]},
+    {   
+        "category":"Geography",
+        "type":"multiple",
+        "difficulty":"medium",
+        "question":"Colchester Overpass, otherwise known as &quot;Bunny Man Bridge&quot;, is located where?",
+        "correct_answer":"Fairfax County, Virginia",
+        "incorrect_answers":["Medford, Oregon","Braxton County, Virgina","Lemon Grove, California"]
+        },
+    {
+        "category":"General Knowledge",
+        "type":"multiple",
+        "difficulty":"hard",
+        "question":"In flight systems, what does the initialism &quot;TCAS&quot; stand for?",
+        "correct_answer":"Traffic Collision Avoidance System",
+        "incorrect_answers":["Traffic Communication Alert System",
+        "Traffic Configuration Alignment System","Traffic Call-sign Abbreviation System"]
+        }
+    ]
+}

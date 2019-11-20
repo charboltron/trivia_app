@@ -1,0 +1,24 @@
+{
+  "name": "trivia_app_git",
+  "version": "1.0.0",
+  "main": "trivia_first_try.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charboltron/trivia_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charboltron/trivia_app/issues"
+  },
+  "homepage": "https://github.com/charboltron/trivia_app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "description": ""
+}
