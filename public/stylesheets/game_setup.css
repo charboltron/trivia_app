@@ -1,0 +1,38 @@
+body {
+    background-color: salmon;
+    color: chartreuse;
+}
+
+.header3 {
+    margin-top: 7%;
+    text-align: center;
+    font-size: 5em;
+}
+
+.header4 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#game_setup_menu {
+}
+
+form {
+    width: 50%;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+}
+
+input {
+    margin-bottom: 3%;
+}
+
+select {
+    margin-bottom: 3%;
+}

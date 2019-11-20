@@ -1,7 +1,6 @@
 {
   "name": "trivia_app_git",
   "version": "1.0.0",
-  "description": "",
   "main": "trivia_first_try.js",
   "scripts": {
     "start": "node app",
@@ -20,5 +19,6 @@
   "homepage": "https://github.com/charboltron/trivia_app#readme",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "description": ""
 }
