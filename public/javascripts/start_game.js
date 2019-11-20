@@ -32,6 +32,11 @@ function load(){ //Hides the buttons until start game is pressed.
     document.getElementById("guess_buttons").style.visibility = 'hidden';
     document.getElementById("current_question").style.visibility = 'hidden';
     document.getElementById("next_question").style.visibility = 'hidden';
+    
+    // Chad: This is where I attempt to load the variable stored in localStorage
+    // The URL loads, but it is not incorporated into the var url above.
+    var apiURL = localStorage.getItem('storedURL');
+    console.log(apiURL)
 }
 
 async function start_game(){ //Function is async because of API call

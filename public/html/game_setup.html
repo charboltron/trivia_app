@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Game Setup</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
-    <link rel="stylesheet" href="stylesheets/game_setup.css">
+    <link rel="stylesheet" href="../stylesheets/game_setup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </head>
 <body>
     <header>
@@ -40,10 +39,10 @@
 
     <div id="game_setup_menu">
 
-        <form action="/startgame" method="post">
+        <form action="/quick_game" method="get">
             <div class="header4">Game Setup</div>
     
-            <label for="trivia_amount">Select the number of questions you want to answer:</label>
+            <label for="trivia_amount">Select number of questions to answer:</label>
             <!-- <input  type="number" 
                     name="trivia_amount" 
                     id="trivia_amount" 
@@ -137,11 +136,11 @@
                     type="submit"
                     name="btnstartgame"
                     id="btnstartgame">
-                    I've made my bed, now START THE GAME
+                    I've made my bed<br>START THE GAME
             </button>
        
         </form>
     </div>
-    <script rel="text/javascript" src="javascripts/formcontrols.js"></script>
+    <script rel="text/javascript" src="../javascripts/formcontrols.js"></script>
 </body>
 </html>
