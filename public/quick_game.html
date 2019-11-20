@@ -19,7 +19,11 @@
     <br><br>
     <div id="display_question_number"></div>
     <br>
-    <div id="current_question">  
+    <div id="current_question"> 
+        <div id="category"></div>
+        <br>
+        <div id="difficulty"></div> 
+        <br>
         <div id="display_question"></div>
     </div>
     <br>    
@@ -47,6 +51,9 @@
     <div id="display_score"></div>
     <br>
     <button id="next_question" onclick="display_next_question()">Next Question</button>
+    <br>
+    <br>
+    <div id="timer"></div>
     <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
     <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
 </body>
