@@ -1,6 +1,9 @@
 body{
     background-color: rgb(228, 74, 47);
 }
+.landing{
+    background-color: rgb(134, 134, 232);
+}
 
 .sound_icon{
     max-height: 20px;

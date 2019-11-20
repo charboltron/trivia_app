@@ -11,43 +11,25 @@
     <script type="text/javascript" src="javascripts/start_game.js"></script>  
     <script type="module" src="javascripts/trivia.js"></script>        
 </head>
-<body onload="load()">
-    <h1>Welcome to Trivia Smash!</h1>
-    <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
-    <br>
-    <button id="start" onclick="start_game()">Start a New Game!</button>
-    <br><br>
-    <div id="display_question_number"></div>
-    <br>
-    <div id="current_question">  
-        <div id="display_question"></div>
-    </div>
-    <br>    
-  
-    <div id="display_choices">
-    </div>
-    <br>
-    <div id="guess_buttons">
-        <button id= "guess_A" onclick="guess_answer(this.id)">
-            <div id="A_button_text"></div>
+<body class="landing">
+    <h1>Welcome to Best Trivia!</h1>
+    <form action="/quick_game" method="get">
+        <button type="submit" id="quick_game" name="quick_game" onclick="">
+        QUICK GAME!
         </button>
-        <button id= "guess_B" onclick="guess_answer(this.id)">
-            <div id="B_button_text"></div>
-        </button>
-        <button id= "guess_C" onclick="guess_answer(this.id)">
-            <div id="C_button_text"></div>
-        </button>
-        <button id= "guess_D" onclick="guess_answer(this.id)">
-            <div id="D_button_text"></div>
-        </button>
-    </div>
+    </form>
     <br>
-    <div id="display_feedback"></div>
+    <form action="/game_setup_solo" method="get">
+        <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
+        SOLO GAME!
+        </button>
+    </form>
     <br>
-    <div id="display_score"></div>
-    <br>
-    <button id="next_question" onclick="display_next_question()">Next Question</button>
-    <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
-    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
+    <form action="/game_setup_friend" method="get">
+        <button type="submit" id="friend_game" name="game_setup_friend" onclick="">
+        FRIEND GAME!
+        </button>
+    </form>
+    
 </body>
 </html>
