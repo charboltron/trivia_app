@@ -40,7 +40,7 @@
 
     <div id="game_setup_menu">
 
-        <form   action="" method="post">
+        <form action="/startgame" method="post">
             <div class="header4">Game Setup</div>
     
             <label for="trivia_amount">Select the number of questions you want to answer:</label>
@@ -55,6 +55,9 @@
                     name="trivia_amount" 
                     id="trivia_amount" 
                     class="form-control">
+                <option value=10>10</option>
+                <option value=1>1</option>
+                <option value=5>5</option>
                 <option value=10>10</option>
                 <option value=20>20</option>
                 <option value=30>30</option>
@@ -131,7 +134,7 @@
             <!-- change type from submit to button to see the results in the console -->
             <button class="btn btn-lg btn-warning btn-block" 
                     style="margin-top: 5%;" 
-                    type="button"
+                    type="submit"
                     name="btnstartgame"
                     id="btnstartgame">
                     I've made my bed, now START THE GAME
