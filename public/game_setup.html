@@ -44,14 +44,25 @@
             <div class="header4">Game Setup</div>
     
             <label for="trivia_amount">Select the number of questions you want to answer:</label>
-            <input  type="number" 
+            <!-- <input  type="number" 
                     name="trivia_amount" 
                     id="trivia_amount" 
                     class="form-control" 
                     min="1" 
                     max="50" 
-                    value="10">
-    
+                    value="10"> -->
+            <select
+                    name="trivia_amount" 
+                    id="trivia_amount" 
+                    class="form-control">
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=40>40</option>
+                <option value=50>50</option>
+            </select>
+
+
             <label for="trivia_category">Select trivia category: </label>
             <select name="trivia_category" 
                     id="trivia_category"

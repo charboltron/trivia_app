@@ -16,8 +16,8 @@ function SubmitGameSetup() {
 
     var apiURL =    'https://opentdb.com/api.php?' + 
                     'amount=' + triviaAmount +
-                    '&category=' + triviaCategory +
-                    '&difficulty=' + triviaDifficulty +
+                    (triviaCategory == 'any' ? '' : ('&category=' + triviaCategory)) +
+                    (triviaDifficulty == 'any' ? '' : ('&difficulty=' + triviaDifficulty)) +
                     '&type=' + triviaType;
     
     console.log(apiURL);
