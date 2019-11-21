@@ -19,7 +19,8 @@
   "homepage": "https://github.com/charboltron/trivia_app#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "heroku": "^7.35.0"
+    "heroku": "^7.35.0",
+    "pg-promise": "^10.2.1"
   },
   "description": ""
 }
