@@ -36,7 +36,9 @@ function load(){ //Hides the buttons until start game is pressed.
     // Chad: This is where I attempt to load the variable stored in localStorage
     // The URL loads, but it is not incorporated into the var url above.
     var apiURL = localStorage.getItem('storedURL');
+    var triviaAmount = localStorage.getItem('questionCount');
     console.log(apiURL)
+    console.log(triviaAmount)
 }
 
 async function start_game(){ //Function is async because of API call
