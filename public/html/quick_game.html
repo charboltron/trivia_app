@@ -4,14 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Best Trivia Quick Game</title>
+    <title>Quick Game-Trivia Flow</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/start_game.js"></script>  
+    <script type="module" src="javascripts/trivia.js"></script>    
     <!-- <script type="text/javascript" src="../app.js"></script> -->
     <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
-    <script type="text/javascript" src="javascripts/start_game.js"></script>  
-    <script type="module" src="javascripts/trivia.js"></script>        
+       
 </head>
 <body onload="load()">
+    <header>
+            <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="../index.html">
+                                <img src="/public/images/trivia_logo_white.png" width=75px height=75px>
+                            </a>
+                        </div>
+                    
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>  
+        
+                        <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
+                            <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="../index.html" id="navbardrop" data-toggle="dropdown">
+                                              Gameplay
+                                            </a>
+                                            <div class="dropdown-menu">
+                                              <a class="dropdown-item" href="#">Quick Game</a>
+                                              <a class="dropdown-item" href="#">Solo Game</a>
+                                              <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
+                                            </div>
+                                          </li>
+                                <!-- <li class="nav-item active"><a class="nav-link" href="../index.html">Gameplay</a></li> -->
+                                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                                <li class="nav-item"><a class="nav-link" href="sign_up.html">Sign Up</a></li>
+                                <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+    </header>
     <h1>Best Trivia! Quick Game</h1>
     <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
     <br>
