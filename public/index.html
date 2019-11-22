@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home-Trivia Flow</title>
+    <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
@@ -18,7 +19,7 @@
     <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="../index.html">
+                    <a class="navbar-brand" href="index.html">
                         <img src="/public/images/trivia_logo_white.png" width=75px height=75px>
                     </a>
                 </div>
@@ -29,16 +30,6 @@
 
                 <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="../index.html" id="navbardrop" data-toggle="dropdown">
-                                      Gameplay
-                                    </a>
-                                    <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Quick Game</a>
-                                      <a class="dropdown-item" href="#">Solo Game</a>
-                                      <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
-                                    </div>
-                                  </li>
                         <!-- <li class="nav-item active"><a class="nav-link" href="../index.html">Gameplay</a></li> -->
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="sign_up.html">Sign Up</a></li>
@@ -49,24 +40,26 @@
         </nav>
     </header>
     <main>
-        <div class="backgroundImage"></div>
-            <div class="content">
-                <h1>Welcome to <span style="font-family: Pacifico">Trivia</span> Flow!</h1>
-                <form action="/quick_game" method="get">
-                    <button type="submit" id="quick_game" name="quick_game" onclick="">
-                    Quick Game Mode
-                    </button>
-                </form>
-                <form action="/game_setup_solo" method="get">
-                    <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
-                    Solo Game Mode
-                    </button>
-                </form>
-                <form action="/game_setup_friend" method="get">
-                    <button type="submit" id="friend_game" name="game_setup_friend" onclick="" disabled>
-                    Head-to-Head Mode
-                    </button>
-                </form>
+        <div class="container-fluid">
+            <div class="backgroundImage">
+                <div class="content">
+                    <h1>Welcome to <span style="font-family: Pacifico">Trivia</span> Flow!</h1>
+                    <form action="/quick_game" method="get">
+                        <button type="submit" id="quick_game" name="quick_game" onclick="">
+                        Quick Game Mode
+                        </button>
+                    </form>
+                    <form action="/game_setup_solo" method="get">
+                        <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
+                        Solo Game Mode
+                        </button>
+                    </form>
+                    <form action="/game_setup_friend" method="get">
+                        <button type="submit" id="friend_game" name="game_setup_friend" onclick="" disabled>
+                        Head-to-Head Mode
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
