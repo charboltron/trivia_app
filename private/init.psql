@@ -1,0 +1,13 @@
+-- make the tables in the database
+CREATE TABLE IF NOT EXISTS users (
+    usrnm text PRIMARY KEY NOT NULL,
+    usrpw text
+);
+
+
+-- add some dummy data for testing
+INSERT INTO users (usrnm, usrpw)
+    VALUES  ('chad','12345'),
+            ('chaz','password'),
+            ('tom','also12345')
+    ON CONFLICT DO NOTHING;
