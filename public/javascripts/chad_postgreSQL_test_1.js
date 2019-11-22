@@ -27,7 +27,7 @@ db.tx(async t => {
   .catch(error => {
       console.log('ERROR:', error); // print the error
   })
-  // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+  .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 
 // SIMPLE QUERY, IT WORKS!
 // db.one('SELECT $1 AS value', 123)
