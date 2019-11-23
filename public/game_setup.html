@@ -39,7 +39,8 @@
 
     <div id="game_setup_menu">
 
-        <form action="/quick_game" method="get">
+
+        <form action="/quick_game" method="GET">
             <div class="header4">Game Setup</div>
     
             <label for="trivia_amount">Select number of questions to answer:</label>
@@ -133,12 +134,12 @@
             <!-- change type from submit to button to see the results in the console -->
             <button class="btn btn-lg btn-warning btn-block" 
                     style="margin-top: 5%;" 
-                    type="submit"
+                    type="button"
                     name="btnstartgame"
                     id="btnstartgame">
                     I've made my bed<br>START THE GAME
             </button>
-       
+            <button id="hidden_start_game_button" type="submit" style="display: none;"></button>
         </form>
     </div>
     <script rel="text/javascript" src="../javascripts/formcontrols.js"></script>

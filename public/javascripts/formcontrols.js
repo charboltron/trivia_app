@@ -1,7 +1,7 @@
 
 document.getElementById("btnstartgame").onclick = function() { SubmitGameSetup() };
 
-function SubmitGameSetup() {
+async function SubmitGameSetup() {
     var triviaAmount = document.getElementById("trivia_amount").value;
     var triviaCategory = document.getElementById("trivia_category").value;
     var triviaDifficulty = document.getElementById("trivia_difficulty").value;
@@ -21,9 +21,18 @@ function SubmitGameSetup() {
                     '&type=' + triviaType;
     
     console.log(apiURL);
+    let response = await fetch(apiURL);
+    let data = await response.json();
+    console.log(data.results);
+    var trivia = data.results;
 
-    // Chad: this is my attempt to store the apiURL into a variable that can be accessed by multiple html pages, 
-    // I attempt to load this variable in the quick_game.html page via the load() function.
-    localStorage.setItem('storedURL',apiURL);
-    localStorage.setItem('questionCount',triviaAmount);
+    if(data.response_code != 0){
+        alert("We apologize, but there are not enough questions to meet your query, please try again.");
+    } else{
+        localStorage.setItem('apiJSON', JSON.stringify(trivia));
+        localStorage.setItem('questionCount',triviaAmount);
+        var x = localStorage.getItem('apiJSON')
+        //console.log(x);
+        document.getElementById("hidden_start_game_button").click();
+    }
 }

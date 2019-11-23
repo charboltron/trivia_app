@@ -7,13 +7,12 @@
     <title>Trivia Mock</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <!-- <script type="text/javascript" src="../app.js"></script> -->
-    <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
-    <script type="text/javascript" src="javascripts/start_game.js"></script>  
+    <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->  
 </head>
 <body class="landing">
     <h1>Welcome to Best Trivia!</h1>
-    <form action="/quick_game" method="get">
-        <button type="submit" id="quick_game" name="quick_game" onclick="">
+    <form action="/quick_game" method="GET">
+        <button type="submit" id="quick_game" name="quick_game">
         QUICK GAME!
         </button>
     </form>
@@ -29,6 +28,7 @@
         FRIEND GAME!
         </button>
     </form>
-    
+    <script type="text/javascript" src="javascripts/start_game.js"></script> 
+    <script type="text/javascript" src="javascripts/quick_game_default.js"></script> 
 </body>
 </html>
