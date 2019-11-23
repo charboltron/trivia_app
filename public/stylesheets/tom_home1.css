@@ -1,38 +1,51 @@
-/* body {
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 600px;
+  }
+}
+
+#masternav{
+    background:transparent;
+}
+
+.bg {
     background-image: url('/public/images/trivia_bg2.jpg');
-    position: fixed; 
-    height: 100%;
-    width: 100%; 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    z-index: -1;
-}  */
-
-#bg {
-    background-image: url('/public/images/trivia_bg2.jpg');
-    width: 100%;
-    height: 100%; 
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -1;
-    left:0;
-    top: 50px;
-}  
+} 
 
 h1 {
-    color: whitesmoke;
+    color: crimson;
     font-family: 'Montserrat';
     margin-top: 2%;
 }
 
-.col-sm-6 {
+.content {
     text-align: center;
-    /* border: 2px solid; */
+    background-color: antiquewhite; /*Main Menu Box Color*/
+    border: 2px solid;
     padding: 1.5%;
-    margin: 4% 25% 0% 25%;  
-    position: relative;
+    margin: 1.5% 25% 0% 25%; 
+    /* position: absolute; */
 }
 
 button[type=submit], #friend_game {
@@ -54,21 +67,6 @@ button[type=submit]:hover {
     padding: 3%;
     margin: 2% auto;
 }
-
-footer {
-    background-color: #555;
-    color: white;
-    padding: 8px;
-    font-size: 12px;
-    font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: auto;
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-  }
 
 
 /*
