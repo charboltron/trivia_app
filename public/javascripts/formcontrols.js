@@ -21,4 +21,9 @@ function SubmitGameSetup() {
                     '&type=' + triviaType;
     
     console.log(apiURL);
+
+    // Chad: this is my attempt to store the apiURL into a variable that can be accessed by multiple html pages, 
+    // I attempt to load this variable in the quick_game.html page via the load() function.
+    localStorage.setItem('storedURL',apiURL);
+    localStorage.setItem('questionCount',triviaAmount);
 }
