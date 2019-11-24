@@ -13,5 +13,6 @@ async function set_default_game() {
     } else{
         localStorage.setItem('apiJSON', JSON.stringify(trivia));
         localStorage.setItem('questionCount', 10);
+        document.getElementById("quick_game_hidden_button").click();
     }
 }
