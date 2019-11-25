@@ -11,6 +11,12 @@ body {
 
 
 #game_signup_form {
+    width: 33%;
+    min-width: 300px;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 form {

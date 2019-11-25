@@ -30,10 +30,16 @@ app.get('/game_setup_friend', function (req, res) {
 })
 
 app.post('/sign_up_submit', (req, res) =>{ 
+
   var user_name =  req.body.user_name.trim(); 
   var user_pwd  =  req.body.user_pwd.trim();
   db.createUser(user_name, user_pwd);
+  console.log(`attempting to add user name: ${user_name} \n`);
+  db.selectUser(user_name,user_pwd)
+  // db.createUser(user_name, user_pwd);
+  console.log(`user added`);
   res.sendFile(__dirname+'/public/sign_up_success.html');
+
   // if(/*user name already in database*/){
   //    console.log("User already in database!");  
   // }else if(user_name.length > 32){
