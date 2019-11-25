@@ -27,8 +27,10 @@ app.get('/game_setup_friend', function (req, res) {
 app.post('/sign_up_submit', (req, res) =>{ 
   var user_name =  req.body.user_name; 
   var user_pwd  =  req.body.user_pwd;
-  db.createUser(user_name, user_pwd);
-  res.write(`user name: ${user_name}`);
+  res.write(`attempting to add user name: ${user_name} \n`);
+  db.selectUser(user_name,user_pwd)
+  // db.createUser(user_name, user_pwd);
+  res.write(`user added`);
   res.end();
   // if(/*user name already in database*/){
   //    console.log("User already in database!");  
