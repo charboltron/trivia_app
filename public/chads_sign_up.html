@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Setup</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
+    <link rel="stylesheet" href="stylesheets/game_signup.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+       <!-- INSERT TOM'S NAV-BAR HERE -->
+       <div style="text-align: center; font-size:2em; color:black;">INSERT TOM'S NAV-BAR HERE!</div>
+    </header>
+
+    <div class="header3">Best Trivia</div>
+
+    <div id="game_signup_form">
+
+        <form action="/sign_up_submit" method="post">
+            <h3>Enter your username and password to sign up, or to sign in if you already have an account.</h3>
+            <br>            
+            <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
+            <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
+
+            <!-- change type from submit to button to see the results in the console -->
+            <button class="btn btn-lg btn-warning btn-block" 
+                    style="margin-top: 5%;" 
+                    type="submit"
+                    name="btnstartgame"
+                    id="btnstartgame">
+                    Sign Up and/or Sign In
+            </button>
+        </form>
+
+    </div>
+    <script rel="text/javascript" src="../javascripts/formcontrols-signup.js"></script>
+</body>
+</html>

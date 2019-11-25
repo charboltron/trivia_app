@@ -3,17 +3,32 @@
 // https://expressjs.com/en/guide/database-integration.html#postgresql
 
 const pgp = require('pg-promise')(/* options */)
+const { PORT, DATABASE_URL, HTTP_TIMEOUT, PSQL_CONNECTION, PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD, PGSSLMODE, PGREQUIRESSL } = require('./config')
+console.log('howdy')
 
+// const cn = {
+//   database: 'd6ckl1lqt0g1q0',
+//   host: 'ec2-174-129-253-125.compute-1.amazonaws.com',
+//   port: '5432',
+//   user: 'gaptijtqgqopxh',
+//   password: 'a2dfcc2e21eab1dd3ac6ce24a15fc13350d4933710d3f6465b817f42e0398e5c',
+//   sslmode: 'require',
+//   ssl: 'on'
+// }
+// const db = pgp(cn)
+console.log(`port is ${PORT}`)
+console.log(`pg database is ${PGDATABASE}`)
 const cn = {
-  database: 'd6ckl1lqt0g1q0',
-  host: 'ec2-174-129-253-125.compute-1.amazonaws.com',
-  port: '5432',
-  user: 'gaptijtqgqopxh',
-  password: 'a2dfcc2e21eab1dd3ac6ce24a15fc13350d4933710d3f6465b817f42e0398e5c',
-  sslmode: 'require',
-  ssl: 'on'
+  database: PGDATABASE,
+  host: PGHOST,
+  port: PGPORT,
+  user: PGUSER,
+  password: PGPASSWORD,
+  sslmode: PGSSLMODE,
+  ssl: PGREQUIRESSL
 }
 const db = pgp(cn)
+
 
 // https://github.com/vitaly-t/pg-promise/blob/master/examples/transaction.js
 db.tx(async t => {
