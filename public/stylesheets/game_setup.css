@@ -15,9 +15,13 @@ body {
     margin-bottom: 3%;
     text-align: center;
     font-size: 2.5em;
+    border: 1px solid red;
+}
 }
 
 #game_setup_menu {
+    border: 1px solid red;
+}
 }
 
 form {
@@ -25,15 +29,23 @@ form {
     min-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid red;
+}
 }
 
 label {
+    border: 1px solid red;
+}
 }
 
 input {
     margin-bottom: 3%;
+    border: 1px solid red;
+}
 }
 
 select {
     margin-bottom: 3%;
+    border: 1px solid red;
+}
 }

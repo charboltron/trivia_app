@@ -91,6 +91,7 @@ function display_next_question(){
         document.getElementById("difficulty").innerHTML = ``;
         document.getElementById("timer").innerHTML = ``;
         document.getElementById("guess_buttons").style.visibility = 'hidden';
+        document.getElementById("next_question").style.visibility = 'hidden';
         document.getElementById("display_question").innerHTML = "GAME OVER! Start a new game?";
         document.getElementById("display_feedback").innerHTML = ``;
         document.getElementById("display_score").innerHTML = `Final Game Score: ${score}`;

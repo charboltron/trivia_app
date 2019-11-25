@@ -8,6 +8,8 @@ body {
     margin-top: 7%;
     text-align: center;
     font-size: 5em;
+    border: 1px solid red;
+}
 }
 
 .header4 {
@@ -15,19 +17,28 @@ body {
     margin-bottom: 3%;
     text-align: center;
     font-size: 2.5em;
+    border: 1px solid red;
 }
+}
+
 
 form {
     width: 50%;
     min-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid red;
+}
 }
 
 input {
     margin-bottom: 3%;
+    border: 1px solid red;
+}
 }
 
 select {
     margin-bottom: 3%;
+    border: 1px solid red;
+}
 }
