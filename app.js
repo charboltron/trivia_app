@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
-const pgp = require('pg-promise')(/* options */)
-const { PORT, DATABASE_URL, HTTP_TIMEOUT, PSQL_CONNECTION, PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD, PGSSLMODE, PGREQUIRESSL } = require('./public/javascripts/config')
-
+const { PORT } = require('./config')
+const db = require('./queries')
 
 var path = require('path');
 app.use(express.urlencoded({ extended: true }));
@@ -21,32 +20,21 @@ app.get('/game_setup_friend', function (req, res) {
     res.send('This is where the game setup will be (FRIEND MODE)')
 })
 
-
-console.log(`database is ${PGDATABASE}`)
-
-const cn = {
-  database: PGDATABASE,
-  host: PGHOST,
-  port: PGPORT,
-  user: PGUSER,
-  password: PGPASSWORD,
-  sslmode: PGSSLMODE,
-  ssl: PGREQUIRESSL
-}
-const db = pgp(cn)
-
-db.tx(async t => {
-  const user = await t.one('INSERT INTO users(usrnm, usrpw) VALUES($1, $2) ON CONFLICT DO NOTHING RETURNING usrnm,usrpw', ['John', '111']);
-  return {user};
+app.post('/sign_up_submit', (req, res) =>{ 
+  let user_name =  req.body.user_name; 
+  let user_pwd  =  req.body.user_pwd;
+  db.addJohn();
+  res.write(`user name: ${user_name}`);
+  res.end();
+  // if(/*user name already in database*/){
+  //    console.log("User already in database!");  
+  // }else if(user_name.length > 32){
+  //   //do something
+  // }else {
+  
+  // }
 })
-  .then(({user}) => {
-      // print new user username
-      console.log('DATA:', user);
-  })
-  .catch(error => {
-      console.log('ERROR:', error); // print the error
-  })
-  .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+
 
 
 
