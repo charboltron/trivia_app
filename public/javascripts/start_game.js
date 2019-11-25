@@ -14,6 +14,7 @@ var question_count;
 var score;
 var current_question;
 var answer_options = [];
+var total_questions;
 
 //Bools
 var guessed;
@@ -22,7 +23,7 @@ var sound = false;
 
 //API Variables
 var trivia;
-var url = 'https://opentdb.com/api.php?amount=10&type=multiple';
+var apiURL;
 
 //---------------------------------------
 //Onclick Function calls from HTML
@@ -32,6 +33,7 @@ function load(){ //Hides the buttons until start game is pressed.
     document.getElementById("guess_buttons").style.visibility = 'hidden';
     document.getElementById("current_question").style.visibility = 'hidden';
     document.getElementById("next_question").style.visibility = 'hidden';
+<<<<<<< HEAD
 
     // Chad: This is where I attempt to load the variable stored in localStorage
     // The URL loads, but it is not incorporated into the var url above.
@@ -39,18 +41,32 @@ function load(){ //Hides the buttons until start game is pressed.
     var triviaAmount = localStorage.getItem('questionCount');
     console.log(apiURL)
     console.log(triviaAmount)
+=======
+    trivia = JSON.parse(localStorage.getItem('apiJSON'));    
+    console.log(`trivia: ${JSON.stringify(trivia)}`);
+    total_questions = localStorage.getItem('questionCount');
+    console.log('total questions: '+total_questions);
+>>>>>>> 0b0471b098fc98f63c78ab52a27f871181b2e873
 }
 
 async function start_game(){ //Function is async because of API call
 
+    // console.log(setting);
+    // if(setting != 'default'){
+    //   apiURL = localStorage.getItem('storedURL');
+    //   total_questions = localStorage.getItem('questionCount');
+    // } else{
+    //   apiURL = 'https://opentdb.com/api.php?amount=10&type=multiple';
+    //   total_questions = 11; 
+    // }
     score = 0;
     //Call API 
     //TODO: update method with passed in url or other idea. 
     //A good idea might be to move the API call to the load() function?
-    let response = await fetch(url);
-    //console.log(response);
-    let data = await response.json();
-    trivia = data.results;
+    // let response = await fetch(apiURL);
+    // let data = await response.json();
+    // console.log(`response code: ${data.response_code}`);
+    
     //console.log(trivia);
     
     //Reset variables
@@ -77,7 +93,8 @@ function display_next_question(){
     //End of game logic
     guessed = false;
     if(!started){return;}
-    if(question_count === 10){
+    console.log(question_count);
+    if(question_count == total_questions){
         clearInterval(timerId);
         document.getElementById("display_question_number").innerHTML = ``;
         document.getElementById("category").innerHTML = ``;
@@ -98,8 +115,6 @@ function display_next_question(){
     //Prepare the question set and the current question
     answer_options = [];
     current_question = trivia[question_count];
-    //console.log(current_question.question);
-    console.log(current_question.difficulty);
     
     let question = current_question.question;
     let ans = current_question.correct_answer;

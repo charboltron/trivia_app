@@ -10,7 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </head>
 <body>
     <header>
@@ -40,10 +39,11 @@
 
     <div id="game_setup_menu">
 
-        <form action="" method="post">
+
+        <form action="/quick_game" method="GET">
             <div class="header4">Game Setup</div>
     
-            <label for="trivia_amount">Select the number of questions you want to answer:</label>
+            <label for="trivia_amount">Select number of questions to answer:</label>
             <!-- <input  type="number" 
                     name="trivia_amount" 
                     id="trivia_amount" 
@@ -134,11 +134,11 @@
                     type="button"
                     name="btnstartgame"
                     id="btnstartgame">
-                    I've made my bed, now START THE GAME
+                    I've made my bed<br>START THE GAME
             </button>
-       
+            <button id="hidden_start_game_button" type="submit" style="display: none;"></button>
         </form>
     </div>
-    <script rel="text/javascript" src="javascripts/formcontrols.js"></script>
+    <script rel="text/javascript" src="../javascripts/formcontrols.js"></script>
 </body>
 </html>
