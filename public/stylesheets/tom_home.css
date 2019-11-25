@@ -1,5 +1,5 @@
 #bg {
-    background-image: url('/public/images/question_mark.jpg');
+    background-image: url('../images/question_mark.jpg');
     width: 100%;
     height: 100%; 
     background-size: 100% 100%;
