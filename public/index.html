@@ -3,31 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Mock</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <script type="text/javascript" src="javascripts/index.js"></script> 
+    <title>Home-Trivia Flow</title>
+    <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
+    <!-- Change Style Sheet Here -->
+    <link rel="stylesheet" href="stylesheets/tom_home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body class="landing">
-    <h1>Welcome to Best Trivia!</h1>
-    <form action="/quick_game" method="GET">
-        <button type="button" id="quick_game" name="quick_game">
-        QUICK GAME!
-        </button>
-        <button id="quick_game_hidden_button" type="submit" style="display: none;"></button>
-    </form>
-    <br>
-    <form action="/game_setup_solo" method="get">
-        <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
-        SOLO GAME!
-        </button>
-    </form>
-    <br>
-    <form action="/game_setup_friend" method="get">
-        <button type="submit" id="friend_game" name="game_setup_friend" onclick="">
-        FRIEND GAME!
-        </button>
-    </form>
-    <script type="text/javascript" src="javascripts/quick_game_default.js"></script> 
+<body>
+    <header>  
+    <!--Nav bar  -->
+    <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/trivia_logo_white.png" width=131px height=50px>
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>  
+                <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- <li class="nav-item active"><a class="nav-link" href="../index.html">Gameplay</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sign_up.html">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End of navbar -->
+        <div class="container-fluid">
+                <div id="bg">
+                    <div class="row content">
+                        <div class="col-sm-3 sidenav">
+                        </div>
+                    </div>
+                    <div class="col-sm-6"> 
+                            <h1>Welcome to <span style="font-family: Pacifico">Trivia</span> Flow!</h1>
+                            <form action="/quick_game" method="get">
+                                <button type="submit" id="quick_game" name="quick_game" onclick="">
+                                Quick Game Mode
+                                </button>
+                            </form>
+                            <form action="/game_setup_solo" method="get">
+                                <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
+                                Solo Game Mode
+                                </button>
+                            </form>
+                            <form action="/game_setup_friend" method="get">
+                                <button type="submit" id="friend_game" name="game_setup_friend" onclick="" disabled>
+                                Head-to-Head Mode
+                                </button>
+                            </form>
+                    </div>
+                    <div class="col-sm-3 sidenav">
+                        <!-- PLACE ADS HERE -->
+                    </div>
+            </div>
+        </div>
+    </div>
+   <!-- <footer class="container-fluid text-center">
+            <p>Copyright &copy 2019 Trivia Flow</p>
+    </footer> -->
 </body>
 </html>

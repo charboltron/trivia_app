@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quick Game-Trivia Flow</title>
+    <title>Leaderboard-Trivia Flow</title>
     <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/tom_home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascripts/start_game.js"></script>  
-    <script type="module" src="javascripts/trivia.js"></script>    
-    <!-- <script type="text/javascript" src="../app.js"></script> -->
-    <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
-       
 </head>
-<body onload="load()">
-    <header>
+<body>
+    <header>    
             <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -54,49 +49,9 @@
                     </div>
                 </nav>
     </header>
-    <h1>Best Trivia! Quick Game</h1>
-    <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
-    <br>
-    <button id="start" onclick="start_game()">Start a New Game!</button>
-    <br><br>
-    <div id="display_question_number"></div>
-    <br>
-    <div id="current_question"> 
-        <div id="category"></div>
-        <br>
-        <div id="difficulty"></div> 
-        <br>
-        <div id="display_question"></div>
-    </div>
-    <br>    
-  
-    <div id="display_choices">
-    </div>
-    <br>
-    <div id="guess_buttons">
-        <button id= "guess_A" onclick="guess_answer(this.id)">
-            <div id="A_button_text"></div>
-        </button>
-        <button id= "guess_B" onclick="guess_answer(this.id)">
-            <div id="B_button_text"></div>
-        </button>
-        <button id= "guess_C" onclick="guess_answer(this.id)">
-            <div id="C_button_text"></div>
-        </button>
-        <button id= "guess_D" onclick="guess_answer(this.id)">
-            <div id="D_button_text"></div>
-        </button>
-    </div>
-    <br>
-    <div id="display_feedback"></div>
-    <br>
-    <div id="display_score"></div>
-    <br>
-    <button id="next_question" onclick="display_next_question()">Next Question</button>
-    <br>
-    <br>
-    <div id="timer"></div>
-    <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
-    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
-</body>
+    <main>
+
+        
+    </main>
+    </body>
 </html>
