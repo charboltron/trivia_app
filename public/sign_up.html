@@ -51,6 +51,25 @@
     </header>
     <main>
 
+        <div id="game_signup_form">
+
+            <form action="/sign_up_submit" method="post">
+                <h3>Enter your username and password to sign up, or to sign in if you already have an account.</h3>
+                <br>            
+                <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
+                <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
+    
+                <!-- change type from submit to button to see the results in the console -->
+                <button class="btn btn-lg btn-warning btn-block" 
+                        style="margin-top: 5%;" 
+                        type="submit"
+                        name="btnstartgame"
+                        id="btnstartgame">
+                        Sign Up and/or Sign In
+                </button>
+            </form>
+    
+        </div>
 
     </main>
     </body>
