@@ -25,7 +25,7 @@ const createUser = (user_name, user_pwd) => {
     return {user};
     })
     .then(({user}) => {
-        // print new user username
+        // print new user
         console.log('DATA:', user);
     })
     .catch(error => {
@@ -33,17 +33,28 @@ const createUser = (user_name, user_pwd) => {
     })
     .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 }
-    // const { name, email } = request.body
-    
-    // db.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
-    //     if (error) {
-    //     throw error
-    //     }
-    //     response.status(201).send(`User added with ID: ${result.insertId}`)
-    // })
+
+const selectUser = (user_name) => {
+    const db = pgp(cn)
+    console.log('connected to psql db')
+    console.log(`looking for user ${user_name} in the database`)
+    db.tx(async t => {
+        const user = await t.one(
+            `SELECT usrnm FROM users WHERE usrnm=$1`,[user_name]);
+    return {user};
+    })
+    .then(({user}) => {
+        console.log(`user ${user_name} already exists, please select another user name`);
+    })
+    .catch(error => {
+        console.log('ERROR:', error); // print the error
+    })
+    .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+}
 
 module.exports = {
-    createUser
+    createUser,
+    selectUser
 }
 
 // const getUsers = (request, response) => {
