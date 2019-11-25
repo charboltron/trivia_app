@@ -25,9 +25,9 @@ app.get('/game_setup_friend', function (req, res) {
 })
 
 app.post('/sign_up_submit', (req, res) =>{ 
-  let user_name =  req.body.user_name; 
-  let user_pwd  =  req.body.user_pwd;
-  db.addJohn();
+  var user_name =  req.body.user_name; 
+  var user_pwd  =  req.body.user_pwd;
+  db.createUser(user_name, user_pwd);
   res.write(`user name: ${user_name}`);
   res.end();
   // if(/*user name already in database*/){
@@ -38,9 +38,6 @@ app.post('/sign_up_submit', (req, res) =>{
   
   // }
 })
-
-
-
 
 // const PORT = process.env.PORT || 3000; // THIS MOVED TO ENVIRONMENT VARIABLES
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

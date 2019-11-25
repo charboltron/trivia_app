@@ -12,12 +12,16 @@ const cn = {
 }
 // const db = pgp(cn)
 
+const createUser = (user_name, user_pwd) => {
 
-const addJohn = (request, response) => {
     const db = pgp(cn)
     console.log('connected to psql db')
+    console.log(`Adding ${user_name} to the database!`);
     db.tx(async t => {
-        const user = await t.one('INSERT INTO users(usrnm, usrpw) VALUES($1, $2) ON CONFLICT DO NOTHING RETURNING usrnm,usrpw', ['John', '111']);
+        const user = await t.one(
+            `INSERT INTO users(usrnm, usrpw) VALUES($1, $2) 
+             ON CONFLICT DO NOTHING RETURNING usrnm,usrpw`, 
+            [user_name, user_pwd]);
     return {user};
     })
     .then(({user}) => {
@@ -29,8 +33,6 @@ const addJohn = (request, response) => {
     })
     .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 }
-
-const createUser = (request, response) => {
     // const { name, email } = request.body
     
     // db.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
@@ -39,17 +41,10 @@ const createUser = (request, response) => {
     //     }
     //     response.status(201).send(`User added with ID: ${result.insertId}`)
     // })
-    }
-
-
 
 module.exports = {
-    addJohn,
     createUser
 }
-
-
-
 
 // const getUsers = (request, response) => {
 //     db.query('SELECT * FROM users', (error, results) => {
