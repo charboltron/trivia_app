@@ -64,4 +64,4 @@ typings/
 .netrc
 
 # VIM persistent undo files
-.un~
+.un*
