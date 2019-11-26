@@ -7,6 +7,11 @@ var path = require('path');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join('./public')));
 
+app.get('/', function (req, res) {
+  console.log('home button pressed');
+  res.sendFile(__dirname+'/public/index.html');
+})
+
 app.get('/quick_game', function (req, res) {
     res.sendFile(__dirname+'/public/quick_game.html');
   })
@@ -25,13 +30,17 @@ app.get('/game_setup_friend', function (req, res) {
 })
 
 app.post('/sign_up_submit', (req, res) =>{ 
-  var user_name =  req.body.user_name; 
-  var user_pwd  =  req.body.user_pwd;
-  res.write(`attempting to add user name: ${user_name} \n`);
-  db.selectUser(user_name,user_pwd)
-  // db.createUser(user_name, user_pwd);
-  res.write(`user added`);
-  res.end();
+
+  var user_name =  req.body.user_name.trim(); 
+  var user_pwd  =  req.body.user_pwd.trim();
+  console.log(`attempting to add user name: ${user_name} \n`);
+  db.selectUser(user_name);
+  
+  //if(user can be added)
+  db.createUser(user_name, user_pwd);
+  console.log(`user added`);
+  res.sendFile(__dirname+'/public/sign_up_success.html');
+
   // if(/*user name already in database*/){
   //    console.log("User already in database!");  
   // }else if(user_name.length > 32){
