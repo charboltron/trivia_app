@@ -58,7 +58,7 @@
         <div id="game_signup_form">
 
             <form action="/sign_up_submit" method="post">
-                <h3 id="signupMessage">Enter your username and password to sign up, or to sign in if you already have an account.</h3>
+                <h3 id="signupMessage">Enter your user name and password.</h3>
                 <br>            
                 <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
                 <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
@@ -67,10 +67,14 @@
                 <button class="btn btn-lg btn-warning btn-block" 
                         style="margin-top: 5%;" 
                         type="submit"
-                        name="btnstartgame"
-                        id="btnstartgame">
-                        Sign Up and/or Sign In
+                        name="btnsignup"
+                        id="btnsignup">
+                        NEW USERS<br>click here to sign up
                 </button>
+                <br>
+                <a href="sign_in.html" style="margin-top: 10%;">
+                    EXISTING USERS go to sign in page
+                </a>
             </form>
     
         </div>

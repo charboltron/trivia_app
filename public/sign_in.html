@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Success!</title>
+    <title>Sign-In-Trivia Flow</title>
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="""> -->
+    <link rel="stylesheet" href="stylesheets/game_signup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -35,8 +35,8 @@
                                               Gameplay
                                             </a>
                                             <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="quick_game.html">Quick Game</a>
-                                              <a class="dropdown-item" href="solo_mode.html">Solo Game</a>
+                                                <a class="dropdown-item" href="quick_game.html">Quick Game</a>
+                                                <a class="dropdown-item" href="solo_mode">Solo Game</a>
                                               <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
                                             </div>
                                           </li>
@@ -50,25 +50,31 @@
                 </nav>
     </header>
     <main>
-        <div class="container-fluid">
-            <div id="bg">
-                <div class="row content">
-                    <div class="col-sm-3 sidenav">
-                    </div>
-                </div>
-                <div class="col-sm-6"> 
-                        <h1>Thanks for signing up! Now you can play 
-                            games with your friends or even strangers!</h1>
-                </div>
-                <form action="/" method="get">
-                <button id="return_home" type="submit">Return to Home Page</button>
-                </form>
-                <div class="col-sm-3 sidenav">
-                    <!-- PLACE ADS HERE -->
-                </div>
-            </div>
+
+        <div id="game_signin_form">
+
+            <form action="/sign_in_submit" method="post">
+                <h3 id="signinMessage">Enter your user name and password.</h3>
+                <br>            
+                <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
+                <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
+    
+                <!-- change type from submit to button to see the results in the console -->
+                <button class="btn btn-lg btn-warning btn-block" 
+                        style="margin-top: 5%;" 
+                        type="submit"
+                        name="btnsignin"
+                        id="btnsignin">
+                        EXISTING USERS<br>click here to sign in
+                </button>
+                <br>
+                <a href="sign_up.html" style="margin-top: 10%;">
+                    NEW USERS go to sign up page
+                </a>
+            </form>
+    
         </div>
-        
+
     </main>
     </body>
 </html>
