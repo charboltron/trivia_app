@@ -17,37 +17,70 @@
 <body>
     <header>    
             <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="/images/trivia_logo_white.png" width=131px height=50px>
-                            </a>
-                        </div>
-                    
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>  
-        
-                        <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
-                            <ul class="navbar-nav ml-auto">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                            <img 
+                                src="images/logo.png" 
+                                width=87px 
+                                height=50px
+                            >
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" 
+                            type="button" 
+                            data-toggle="collapse" 
+                            data-target="#collapsibleNavbar"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>  
+                    <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                    <a 
+                                        class="nav-link dropdown-toggle" 
+                                        href="#" 
+                                        id="navbardrop" 
+                                        data-toggle="dropdown"
+                                    >
+                                        Play!
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="quick_game.html">Quick Game</a>
+                                        <a class="dropdown-item" href="solo.html">Solo Game</a>
+                                        <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
+                                    </div>
+                                    </li>
                                     <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="index.html" id="navbardrop" data-toggle="dropdown">
-                                              Gameplay
+                                            <a 
+                                                class="nav-link dropdown-toggle" 
+                                                href="#" id="navbardrop" 
+                                                data-toggle="dropdown"
+                                            >
+                                            About
                                             </a>
                                             <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="quick_game.html">Quick Game</a>
-                                              <a class="dropdown-item" href="solo_mode.html">Solo Game</a>
-                                              <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
+                                                <a class="dropdown-item" href="about_game.html">Game</a>
+                                                <a class="dropdown-item" href="about_team.html">Trivia Night Team</a>
                                             </div>
-                                          </li>
-                                <!-- <li class="nav-item active"><a class="nav-link" href="../index.html">Gameplay</a></li> -->
-                                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="sign_up.html">Sign Up</a></li>
-                                <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
-                            </ul>
-                        </div>
+    
+                            <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                            <li class="nav-item dropdown">
+                                    <a 
+                                        class="nav-link dropdown-toggle" 
+                                        href="#" id="navbardrop" 
+                                        data-toggle="dropdown"
+                                    >
+                                    Account
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="sign_in.html">Login</a>
+                                        <a class="dropdown-item" href="sign_up.html">Sign Up</a>
+                                    </div>
+                            </li>        
+                        </ul>
                     </div>
-                </nav>
+                </div>
+            </nav>
     </header>
     <main>
         <div class="container-fluid">
