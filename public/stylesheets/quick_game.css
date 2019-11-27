@@ -15,6 +15,7 @@
 body{
     /* background-color: rgb(98, 211, 76); */
     color: cornsilk;
+    border: 1px solid red;
 }
 
 .sound_icon{
@@ -22,3 +23,29 @@ body{
     max-width: 20px;
     border: 1px solid red;
 }
+
+#start {
+    border: 1px solid red;
+}
+
+#display_question_number {
+    border: 1px solid red;
+}
+
+#current_question {
+    border: 1px solid red;
+}
+
+#category {
+    border: 1px solid red;
+}
+
+#difficulty {
+    border: 1px solid red;
+}
+
+#display_question {
+    border: 1px solid red;
+}
+
+

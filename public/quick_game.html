@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quick Game-Trivia Flow</title>
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+    <title>Quick Game-Trivia Night</title>
+    <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascripts/start_game.js"></script>   
+    <script type="text/javascript" src="javascripts/start_game.js"></script>  
     <!-- <script type="text/javascript" src="../app.js"></script> -->
     <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
        
@@ -24,7 +24,11 @@
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <a class="navbar-brand" href="index.html">
-                                <img src="/images/trivia_logo_white.png" width=131px height=50px>
+                                    <img 
+                                    src="images/logo.png" 
+                                    width=87px 
+                                    height=50px
+                                    >
                             </a>
                         </div>
                     
@@ -36,7 +40,7 @@
                             <ul class="navbar-nav ml-auto">
                                     <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="index.html" id="navbardrop" data-toggle="dropdown">
-                                              Gameplay
+                                              Play!
                                             </a>
                                             <div class="dropdown-menu">
                                               <a class="dropdown-item" href="quick_game.html">Quick Game</a>
@@ -54,7 +58,7 @@
                 </nav>
     </header>
     <div id="bg"></div>
-    <h1>Best Trivia! Quick Game</h1>
+    <h1>Quick Game</h1>
     <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
     <br>
     <button id="start" onclick="start_game()">Start a New Game!</button>
