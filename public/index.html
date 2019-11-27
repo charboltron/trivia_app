@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home-Trivia Night</title>
-    <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png"/>
+    <title>Home-Trivia Flow</title>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
@@ -51,9 +51,10 @@
                     <div class="col-sm-6"> 
                             <h1>Welcome to <span style="font-family: Pacifico">Trivia</span> Flow!</h1>
                             <form action="/quick_game" method="get">
-                                <button type="submit" id="quick_game" name="quick_game" onclick="">
+                                <button type="button" id="quick_game" name="quick_game" onclick="">
                                 Quick Game
                                 </button>
+                                <button type="submit" id="hidden_quick_game_button" style="display: none;"></button>
                             </form>
                             <form action="/game_setup_solo" method="get">
                                 <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
@@ -74,5 +75,6 @@
    <!-- <footer class="container-fluid text-center">
             <p>Copyright &copy 2019 Trivia Flow</p>
     </footer> -->
+    <script rel="text/javascript" src="../javascripts/quick_game_default.js"></script>
 </body>
 </html>

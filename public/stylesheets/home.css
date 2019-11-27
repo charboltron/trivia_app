@@ -25,7 +25,7 @@ h1 {
     position: relative;
 }
 
-button[type=submit], #friend_game {
+button[type=submit],[type=button], #friend_game {
     font-family: 'Pacifico';
     font-size: 2.5em;
     background-color: crimson;
@@ -36,7 +36,7 @@ button[type=submit], #friend_game {
     margin: 1% auto;
 }
 
-button[type=submit]:hover {
+button[type=submit]:hover,[type=button]:hover {
     background-color: white;
     color: crimson;
     border: 2.5px solid black;

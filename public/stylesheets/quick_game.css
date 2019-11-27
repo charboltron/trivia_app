@@ -12,9 +12,9 @@
     border: 1px solid red;
 }
 
-h1 { 
-    color: white;
-    font-family: Pacifico;
+body{
+    /* background-color: rgb(98, 211, 76); */
+    color: cornsilk;
     border: 1px solid red;
 }
 

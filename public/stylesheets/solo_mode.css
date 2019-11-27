@@ -10,7 +10,7 @@ body {
     font-size: 5em;
     border: 1px solid red;
 }
-}
+
 
 .header4 {
     margin-top: 3%;
@@ -19,7 +19,7 @@ body {
     font-size: 2.5em;
     border: 1px solid red;
 }
-}
+
 
 
 form {
@@ -29,16 +29,15 @@ form {
     margin-right: auto;
     border: 1px solid red;
 }
-}
+
 
 input {
     margin-bottom: 3%;
     border: 1px solid red;
 }
-}
+
 
 select {
     margin-bottom: 3%;
     border: 1px solid red;
-}
 }
