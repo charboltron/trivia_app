@@ -10,14 +10,13 @@ const cn = {
   sslmode: PGSSLMODE,
   ssl: PGREQUIRESSL
 }
-// const db = pgp(cn)
+const db = pgp(cn)
 
-const createUser = (user_name, user_pwd) => {
-
-    const db = pgp(cn)
-    console.log('connected to psql db')
+const createUser = async (user_name, user_pwd) => {
+    // const db = pgp(cn)
+    // console.log('connected to psql db')
     console.log(`Adding ${user_name} to the database!`);
-    db.tx(async t => {
+    await db.tx(async t => {
         const user = await t.one(
             `INSERT INTO users(usrnm, usrpw) VALUES($1, $2) 
              ON CONFLICT DO NOTHING RETURNING usrnm,usrpw`, 
@@ -31,32 +30,41 @@ const createUser = (user_name, user_pwd) => {
     .catch(error => {
         console.log('ERROR:', error); // print the error
     })
-    .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+    // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 }
 
-const selectUser = (user_name) => {
-    const db = pgp(cn)
+const userCheckandAdd = async (user_name, user_pwd) => {
+    // const db = pgp(cn)
     console.log('connected to psql db')
     console.log(`looking for user ${user_name} in the database`)
-    db.tx(async t => {
-        const user = await t.one(
-            `SELECT usrnm FROM users WHERE usrnm=$1`,[user_name]);
-    return {user};
+    var canAdd = 0;
+    await db.tx(async t => {
+        const userCount = await t.one(
+            `SELECT COUNT(*) FROM users WHERE usrnm=$1`,[user_name]);
+    console.log(`userCount is ${userCount.count}`);
+    return {userCount};
     })
-    .then(({user}) => {
-        console.log(`user ${user_name} already exists, please select another user name`);
+    .then( async ({userCount}) => {
+        console.log(`${user_name} occurs ${userCount.count} times`);
+        if(userCount.count > 0) {
+            console.log('program things count is greater than 0');
+        } else {
+            await createUser(user_name, user_pwd);
+            console.log(`user added`);
+            canAdd = 1;
+        }
     })
     .catch(error => {
         console.log('ERROR:', error); // print the error
     })
-    .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
-}
+    // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+    return canAdd;
+    }
+
 
 module.exports = {
     createUser,
-    selectUser
+    userCheckandAdd
 }
 
-  
-
-  
+db.$pool.end  
