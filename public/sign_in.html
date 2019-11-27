@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign-Up-Trivia Flow</title>
+    <title>Sign-In-Trivia Flow</title>
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -51,10 +51,10 @@
     </header>
     <main>
 
-        <div id="game_signup_form">
+        <div id="game_signin_form">
 
-            <form action="/sign_up_submit" method="post">
-                <h3 id="signupMessage">Enter your user name and password.</h3>
+            <form action="/sign_in_submit" method="post">
+                <h3 id="signinMessage">Enter your user name and password.</h3>
                 <br>            
                 <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
                 <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
@@ -63,13 +63,13 @@
                 <button class="btn btn-lg btn-warning btn-block" 
                         style="margin-top: 5%;" 
                         type="submit"
-                        name="btnsignup"
-                        id="btnsignup">
-                        NEW USERS<br>click here to sign up
+                        name="btnsignin"
+                        id="btnsignin">
+                        EXISTING USERS<br>click here to sign in
                 </button>
                 <br>
-                <a href="sign_in.html" style="margin-top: 10%;">
-                    EXISTING USERS go to sign in page
+                <a href="sign_up.html" style="margin-top: 10%;">
+                    NEW USERS go to sign up page
                 </a>
             </form>
     
