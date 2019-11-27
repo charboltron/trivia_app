@@ -12,15 +12,40 @@
     border: 1px solid red;
 }
 
-/* body{
-    background-color: rgb(98, 211, 76);
+h1 { 
+    color: white;
+    font-family: Pacifico;
+    border: 1px solid red;
 }
-.landing{
-    background-color: rgb(134, 134, 232);
-} */
 
 .sound_icon{
     max-height: 20px;
     max-width: 20px;
     border: 1px solid red;
 }
+
+#start {
+    border: 1px solid red;
+}
+
+#display_question_number {
+    border: 1px solid red;
+}
+
+#current_question {
+    border: 1px solid red;
+}
+
+#category {
+    border: 1px solid red;
+}
+
+#difficulty {
+    border: 1px solid red;
+}
+
+#display_question {
+    border: 1px solid red;
+}
+
+
