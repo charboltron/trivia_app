@@ -10,12 +10,11 @@ const cn = {
   sslmode: PGSSLMODE,
   ssl: PGREQUIRESSL
 }
-// const db = pgp(cn)
+const db = pgp(cn)
 
 const createUser = (user_name, user_pwd) => {
-
-    const db = pgp(cn)
-    console.log('connected to psql db')
+    // const db = pgp(cn)
+    // console.log('connected to psql db')
     console.log(`Adding ${user_name} to the database!`);
     db.tx(async t => {
         const user = await t.one(
@@ -31,32 +30,43 @@ const createUser = (user_name, user_pwd) => {
     .catch(error => {
         console.log('ERROR:', error); // print the error
     })
-    .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+    // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 }
 
-const selectUser = (user_name) => {
-    const db = pgp(cn)
+const getUserCount = (user_name, user_pwd, res) => {
+    // const db = pgp(cn)
     console.log('connected to psql db')
     console.log(`looking for user ${user_name} in the database`)
-    db.tx(async t => {
-        const user = await t.one(
-            `SELECT usrnm FROM users WHERE usrnm=$1`,[user_name]);
-    return {user};
+    const usrCnt = db.tx(async t => {
+        const userCount = await t.one(
+            `SELECT COUNT(*) FROM users WHERE usrnm=$1`,[user_name]);
+    console.log(userCount);
+    return {userCount, res};
     })
-    .then(({user}) => {
-        console.log(`user ${user_name} already exists, please select another user name`);
+    .then(({userCount, res}) => {
+        console.log(`${user_name} occurs ${userCount.count} times`);
+        if(userCount.count > 0) {
+            console.log('program things count is greater than 0')
+            // res.send(`<script>
+            //   alert('Sorry this username is already taken, please try again.')
+            //   </script>`);
+            res.sendFile(__dirname+'/public/sign_up.html'); //need a better way to reload the page and clear current values
+        } else {
+            createUser(user_name, user_pwd);
+            console.log(`user added`);
+            // res.sendFile(__dirname+'/public/sign_up_success.html');
+        }
     })
     .catch(error => {
         console.log('ERROR:', error); // print the error
     })
-    .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
-}
+    // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+    }
+
 
 module.exports = {
     createUser,
-    selectUser
+    getUserCount
 }
 
-  
-
-  
+db.$pool.end  
