@@ -30,27 +30,29 @@ app.get('/game_setup_friend', function (req, res) {
 })
 
 app.post('/sign_up_submit', async (req, res) =>{ 
-  var user_name =  req.body.user_name.trim(); 
+  var user_name =  req.body.user_name.replace(/\s/g, '').trim(); 
   var user_pwd  =  req.body.user_pwd.trim();
   console.log(`attempting to add user name: ${user_name}`);
-  db.getUserCount(user_name, res)
-  
-  // .then(({usrCt}) => {
-  //   console.log(`in app.js the usrCt is `)
-  //   console.log(usrCt);
-    // if(usrCt > 0) {
-    //   console.log('program things count is greater than 0')
-    //   res.send(`<script>
-    //     alert('Sorry this username is already taken, please try again.')
-    //     </script>`);
-    //   // res.sendFile(__dirname+'/public/sign_up.html'); //need a better way to reload the page and clear current values
-    // } else {
-    //   db.createUser(user_name, user_pwd);
-    //   console.log(`user added`);
-    //   res.sendFile(__dirname+'/public/sign_up_success.html');
-  //   }
-  // })
+  var userAdded = await db.userCheckandAdd(user_name, user_pwd);
+  console.log(`userAdded is ${userAdded}`);
 
+  // runthis() => {
+    if (userAdded != 1) { 
+      // this means that some error was returned from the userCheckandAdd function
+      res.send(`
+        <script>alert('Sorry this username is already taken, please try again.');</script>
+        <script>location.reload(true/false);</script>;
+      `);      
+      // res.redirect(__dirname+'/public/sign_up.html');
+      // res.sendFile(__dirname+'/public/sign_up.html'); //need a better way to reload the page and clear current values
+    } else {
+      res.sendFile(__dirname+'/public/sign_up_success.html');
+    }
+  // }
+})
+
+app.get('/sign_up_submit', (req, res) => {
+  res.sendFile(__dirname+'/public/sign_up.html');
 })
 
 // const PORT = process.env.PORT || 3000; // THIS MOVED TO ENVIRONMENT VARIABLES

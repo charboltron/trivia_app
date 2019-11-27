@@ -12,11 +12,11 @@ const cn = {
 }
 const db = pgp(cn)
 
-const createUser = (user_name, user_pwd) => {
+const createUser = async (user_name, user_pwd) => {
     // const db = pgp(cn)
     // console.log('connected to psql db')
     console.log(`Adding ${user_name} to the database!`);
-    db.tx(async t => {
+    await db.tx(async t => {
         const user = await t.one(
             `INSERT INTO users(usrnm, usrpw) VALUES($1, $2) 
              ON CONFLICT DO NOTHING RETURNING usrnm,usrpw`, 
@@ -33,40 +33,38 @@ const createUser = (user_name, user_pwd) => {
     // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 }
 
-const getUserCount = (user_name, user_pwd, res) => {
+const userCheckandAdd = async (user_name, user_pwd) => {
     // const db = pgp(cn)
     console.log('connected to psql db')
     console.log(`looking for user ${user_name} in the database`)
-    const usrCnt = db.tx(async t => {
+    var canAdd = 0;
+    await db.tx(async t => {
         const userCount = await t.one(
             `SELECT COUNT(*) FROM users WHERE usrnm=$1`,[user_name]);
-    console.log(userCount);
-    return {userCount, res};
+    console.log(`userCount is ${userCount.count}`);
+    return {userCount};
     })
-    .then(({userCount, res}) => {
+    .then( async ({userCount}) => {
         console.log(`${user_name} occurs ${userCount.count} times`);
         if(userCount.count > 0) {
-            console.log('program things count is greater than 0')
-            // res.send(`<script>
-            //   alert('Sorry this username is already taken, please try again.')
-            //   </script>`);
-            res.sendFile(__dirname+'/public/sign_up.html'); //need a better way to reload the page and clear current values
+            console.log('program things count is greater than 0');
         } else {
-            createUser(user_name, user_pwd);
+            await createUser(user_name, user_pwd);
             console.log(`user added`);
-            // res.sendFile(__dirname+'/public/sign_up_success.html');
+            canAdd = 1;
         }
     })
     .catch(error => {
         console.log('ERROR:', error); // print the error
     })
     // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
+    return canAdd;
     }
 
 
 module.exports = {
     createUser,
-    getUserCount
+    userCheckandAdd
 }
 
 db.$pool.end  
