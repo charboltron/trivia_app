@@ -55,5 +55,10 @@ app.get('/sign_up_submit', (req, res) => {
   res.sendFile(__dirname+'/public/sign_up.html');
 })
 
+app.get('/', function (req, res) {
+  console.log('home button pressed');
+  res.sendFile(__dirname+'/public/index.html');
+})
+
 // const PORT = process.env.PORT || 3000; // THIS MOVED TO ENVIRONMENT VARIABLES
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
