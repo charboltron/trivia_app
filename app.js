@@ -30,7 +30,18 @@ app.get('/game_setup_friend', function (req, res) {
 })
 
 app.post('/sign_up_submit', async (req, res) =>{ 
-  var user_name =  req.body.user_name.replace(/\s/g, '').trim(); 
+  var user_name =  req.body.user_name.trim();
+  if(user_name.indexOf(' ') >= 0){
+    res.send(`
+    <script>alert('Sorry, usernames may not contain blank spaces, please try again.');</script>
+    <script>window.location.replace('sign_up.html');</script>;
+  `);    
+  }else if(user_name.length > 30){
+      res.send(`
+      <script>alert('Sorry usernames must be less than 30 characters, please try again.');</script>
+      <script>window.location.replace('sign_up.html');</script>;
+    `);    
+  } 
   var user_pwd  =  req.body.user_pwd.trim();
   console.log(`attempting to add user name: ${user_name}`);
   var userAdded = await db.userCheckandAdd(user_name, user_pwd);
@@ -41,7 +52,7 @@ app.post('/sign_up_submit', async (req, res) =>{
       // this means that some error was returned from the userCheckandAdd function
       res.send(`
         <script>alert('Sorry this username is already taken, please try again.');</script>
-        <script>location.reload(true/false);</script>;
+        <script>window.location.replace('sign_up.html');</script>;
       `);      
       // res.redirect(__dirname+'/public/sign_up.html');
       // res.sendFile(__dirname+'/public/sign_up.html'); //need a better way to reload the page and clear current values
