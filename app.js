@@ -51,32 +51,36 @@ app.post('/sign_up_submit', async (req, res) =>{
   // }
 })
 
+app.get('/sign_up_submit', (req, res) => {
+  res.sendFile(__dirname+'/public/sign_up.html');
+})
+
 app.post('/sign_in_submit', async (req, res) =>{ 
   var user_name =  req.body.user_name.replace(/\s/g, '').trim(); 
   var user_pwd  =  req.body.user_pwd.trim();
   console.log(`attempting to sign in user: ${user_name}`);
+  
   // fix code starting here
-  var userSignedIn = await db.userCheckandAdd(user_name, user_pwd);
-  console.log(`userAdded is ${userAdded}`);
+  var userSignedIn = await db.userSignIn(user_name, user_pwd);
+  console.log(`userSignedIn is ${userSignedIn}`);
 
-  // runthis() => {
-    if (userAdded != 1) { 
-      // this means that some error was returned from the userCheckandAdd function
-      res.send(`
-        <script>alert('Sorry this username is already taken, please try again.');</script>
-        <script>location.reload(true/false);</script>;
-      `);      
-      // res.redirect(__dirname+'/public/sign_up.html');
-      // res.sendFile(__dirname+'/public/sign_up.html'); //need a better way to reload the page and clear current values
-    } else {
-      res.sendFile(__dirname+'/public/sign_up_success.html');
-    }
-  // }
+  if (userSignedIn != 1) { 
+    // this means that some error was returned from the userCheckandAdd function
+    res.send(`
+      <script>alert('Sorry this user name and password does not match our records. Please try again.');</script>
+      <script>window.location.replace('sign_in.html');</script>;
+    `);
+  } else {
+    res.sendFile(__dirname+'/public/sign_in_success.html');
+  }
+
 })
 
-app.get('/sign_up_submit', (req, res) => {
+app.get('/sign_in_submit', (req, res) => {
   res.sendFile(__dirname+'/public/sign_up.html');
 })
+
+
 
 app.get('/', function (req, res) {
   console.log('home button pressed');

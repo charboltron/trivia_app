@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
-    <link rel="stylesheet" href="stylesheets/game_signup.css">
+    <link rel="stylesheet" href="stylesheets/game_signin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -17,39 +17,23 @@
 <body>
     <header>    
             <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html">
-                            <img 
+
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="index.html">
+                                <img 
                                 src="images/logo.png" 
                                 width=87px 
                                 height=50px
-                            >
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" 
-                            type="button" 
-                            data-toggle="collapse" 
-                            data-target="#collapsibleNavbar"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>  
-                    <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                    <a 
-                                        class="nav-link dropdown-toggle" 
-                                        href="#" 
-                                        id="navbardrop" 
-                                        data-toggle="dropdown"
-                                    >
-                                        Play!
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="quick_game.html">Quick Game</a>
-                                        <a class="dropdown-item" href="solo.html">Solo Game</a>
-                                        <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
-                                    </div>
-                                    </li>
+                                >                            </a>
+                        </div>
+                    
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>  
+        
+                        <div class="navbar-collapse collapse w-100" id="collapsibleNavbar">
+                            <ul class="navbar-nav ml-auto">
                                     <li class="nav-item dropdown">
                                             <a 
                                                 class="nav-link dropdown-toggle" 
@@ -82,6 +66,7 @@
                 </div>
             </nav>
     </header>
+
     <main>
 
         <div id="game_signin_form">
@@ -92,7 +77,6 @@
                 <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
                 <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
     
-                <!-- change type from submit to button to see the results in the console -->
                 <button class="btn btn-lg btn-warning btn-block" 
                         style="margin-top: 5%;" 
                         type="submit"
@@ -100,7 +84,9 @@
                         id="btnsignin">
                         EXISTING USERS<br>click here to sign in
                 </button>
+                
                 <br>
+
                 <a href="sign_up.html" style="margin-top: 10%;">
                     NEW USERS go to sign up page
                 </a>
