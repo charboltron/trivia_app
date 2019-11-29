@@ -1,14 +1,8 @@
 
-document.getElementById("btnstartgame").onclick = function() { SubmitGameSetup() };
+document.getElementById("btnsignin").onclick = function() { SubmitSignIn() };
 
-function load_setup() { // checks to ensure the user is already logged in
-    user_signed_in = localStorage.getItem('userSignedIn');
-    if (user_signed_in) == (NULL || false ) {
-        alert('Please sign in before choosing game settings.');
-    }
-}
-
-async function SubmitGameSetup() {
+async function SubmitSignIn() {
+    // MODIFY CODE STARTING HERE!!
     var triviaAmount = document.getElementById("trivia_amount").value;
     var triviaCategory = document.getElementById("trivia_category").value;
     var triviaDifficulty = document.getElementById("trivia_difficulty").value;
