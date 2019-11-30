@@ -126,10 +126,10 @@ app.post('/delete_user_account', async (req, res) =>{
   console.log(`return from userDeleted in app: User Deleted = ${userDeleted}`);
   if(userDeleted){
     console.log(`User ${user_name} has been deleted from the database.`);
-    res.send(`
-    <script>alert('Sorry this user name and password does not match our records. Please try again.');</script>
-    <script>window.location.replace('sign_in.html');</script>;
-  `);
+        res.send(`
+      <script>alert('We are sorry to see you go, but we understand. Thanks for joining and you are welcome back anytime. Goodbye!');</script>
+      <script>window.location.replace('index.html');</script>;
+    `);
   }
 })
 
