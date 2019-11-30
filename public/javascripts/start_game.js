@@ -66,7 +66,7 @@ async function start_game(){ //Function is async because of API call
     guessed = false;
     
     //Show the buttons on the screen and hide start button
-    document.getElementById("start").style.visibility = 'hidden';
+    document.getElementById("start").style.display = 'none';
     document.getElementById("display_wrapper").style.visibility = 'visible';
     document.getElementById("guess_buttons").style.visibility = 'visible';
     document.getElementById("current_question").style.visibility = 'visible';
