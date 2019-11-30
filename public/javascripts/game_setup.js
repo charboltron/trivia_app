@@ -1,19 +1,19 @@
-window.onload = function(){ load_setup(); }
+window.onload = function(){ loadSetup(); }
 
 // document.getElementById("btnstartgame").onclick = function() { SubmitGameSetup() };
 
-var user_signed_in = '';
+// var user_signed_in = '';
 
-function load_setup() { // checks to ensure the user is already logged in
+function loadSetup() { // checks to ensure the user is already logged in
     user_signed_in = localStorage.getItem('userSignedIn');
     console.log(`user_signed_in is: ${user_signed_in}`);
-    if (user_signed_in === (null || '' || false )) {
+    if (user_signed_in === null) {
         console.log('user not signed in');
         alert("Please sign in before choosing game settings.");
-        window.location.replace('sign_in');
+        window.location.replace('sign_in.html');
     } else {
-        console.log('user seems signed in')
-        alert('this does not make sense')
+        console.log(`${user_signed_in} seems signed in`)
+        // alert('this does not make sense')
     }
 }
 
