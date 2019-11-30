@@ -24,8 +24,19 @@ body{
     border: 1px solid red;
 }
 
-h1 {
+h2 {
     color: white;
+    text-align: center;
+    font-family: Pacifico;
+    margin-top: 0.5%;
+}
+
+.row, .col-2, .col-3, .col-4,
+.col-6, .col-8 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid red;
 }
 
 #start {
