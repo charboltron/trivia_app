@@ -92,16 +92,14 @@ const deleteUser = async (user_name) => {
     // const db = pgp(cn)
     // console.log('connected to psql db')
     console.log(`Deleting ${user_name} from the database!`);
-    const result = await db.tx(async t => {
-        await t.one(
-            `DELETE FROM users WHERE usrnm = $1`, [user_name]);
-    })
-    .then(result => {
-        // print new user
-        console.log(`DATA: ${result}`);
+
+    const result = await db.result('DELETE FROM users WHERE usrnm = $1', [user_name], r => r.rowCount)
+    .then(count => {
+        // count = number of rows deleted
+        console.log(`Deleted ${count} rows from the database.`)
     })
     .catch(error => {
-        console.log('ERROR:', error); // print the error
+        console.log(error);
     })
     // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
     return 1;
