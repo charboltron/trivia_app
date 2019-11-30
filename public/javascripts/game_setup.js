@@ -6,6 +6,7 @@ function loadSetup() { // checks to ensure the user is already logged in
 
     user_signed_in = localStorage.getItem('userSignedIn');
     console.log(`user_signed_in is: ${user_signed_in}`);
+    // alert(`user_signed_in is: ${user_signed_in}`);
     if (!user_signed_in) {
         console.log('user not signed in');
         alert("Please sign in before choosing game settings.");
@@ -46,7 +47,7 @@ async function SubmitGameSetup() {
     } else{
         localStorage.setItem('apiJSON', JSON.stringify(trivia));
         localStorage.setItem('questionCount',triviaAmount);
-        var x = localStorage.getItem('apiJSON')
+        // var x = localStorage.getItem('apiJSON')
         //console.log(x);
         document.getElementById("hidden_start_game_button").click();
     }

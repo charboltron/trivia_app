@@ -16,20 +16,28 @@ app.get('/quick_game', function (req, res) {
     res.sendFile(__dirname+'/public/quick_game.html');
   })
 
+
+
 app.get('/game_setup_solo', function (req, res) {
 
   //res.send(`Currently signed in is: ${app.locals.current_signed_in_user}`);
   res.sendFile(__dirname+'/public/game_setup.html');
 })
 
+
+
 // app.get('/solo_game', function (req, res) {
 //   res.sendFile(__dirname+'/public/html/solo_game.html');
 // })
+
+
 
 app.get('/game_setup_friend', function (req, res) {
     //TODO: res.sendFile(__dirname+'/public/game_setup_friend.html');
     res.send('This is where the game setup will be (FRIEND MODE)')
 })
+
+
 
 app.post('/sign_up_submit', async (req, res) =>{ 
   
@@ -96,6 +104,8 @@ app.get('/sign_up_submit', (req, res) => {
   res.sendFile(__dirname+'/public/sign_up.html');
 })
 
+
+
 app.post('/sign_in_submit', async (req, res) =>{ 
   var user_name =  req.body.user_name.replace(/\s/g, '').trim(); 
   var user_pwd  =  req.body.user_pwd.trim();
@@ -103,7 +113,7 @@ app.post('/sign_in_submit', async (req, res) =>{
   
   // fix code starting here
   var userSignedIn = await db.userSignIn(user_name, user_pwd);
-  console.log(`userSignedIn is ${userSignedIn}`);
+  console.log(`userSignedIn value is 1 if correctly signed in: ${userSignedIn}`);
 
   if (userSignedIn != 1) { 
     // this means that some error was returned from the userCheckandAdd function
@@ -117,6 +127,8 @@ app.post('/sign_in_submit', async (req, res) =>{
     res.sendFile(__dirname+'/public/sign_in_success.html');
   }
 })
+
+
 
 app.post('/delete_user_account', async (req, res) =>{ 
   var user_name = 'Tyler'; //For testing of course
@@ -132,10 +144,14 @@ app.post('/delete_user_account', async (req, res) =>{
   }
 })
 
+
+
 app.get('/', function (req, res) {
   console.log('home button pressed');
   res.sendFile(__dirname+'/public/index.html');
 })
+
+
 
 // const PORT = process.env.PORT || 3000; // THIS MOVED TO ENVIRONMENT VARIABLES
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
