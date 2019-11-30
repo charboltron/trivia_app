@@ -275,6 +275,12 @@ function start_timer() {
 
 function toggle_sound(){
     sound = !sound;
+    if (sound){
+        document.getElementById("toggle_sound").src = "images/sound_icon_on_white.png";
+    }
+    else {
+        document.getElementById("toggle_sound").src = "images/sound_icon_off_white.png";
+    }
 }
 
 

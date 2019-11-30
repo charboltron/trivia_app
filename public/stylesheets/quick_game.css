@@ -19,8 +19,10 @@ body{
 }
 
 .sound_icon{
-    max-height: 20px;
-    max-width: 20px;
+    min-width: 50px;
+    min-height: 45px;
+    max-height: 45px;
+    max-width: 50px;
     border: 1px solid red;
 }
 
