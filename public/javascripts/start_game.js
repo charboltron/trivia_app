@@ -24,6 +24,7 @@ var sound = false;
 //API Variables
 var trivia;
 var apiURL;
+var user_signed_in;
 
 //---------------------------------------
 //Onclick Function calls from HTML
@@ -36,7 +37,10 @@ function load(){ //Hides the buttons until start game is pressed.
     trivia = JSON.parse(localStorage.getItem('apiJSON'));    
     console.log(`trivia: ${JSON.stringify(trivia)}`);
     total_questions = localStorage.getItem('questionCount');
-    console.log('total questions: '+total_questions);
+    console.log(`total questions: ${total_questions}`);
+    user_signed_in = localStorage.getItem('userSignedIn');
+    console.log(`user signed in is: ${user_signed_in}`);
+    // alert(`trivia: ${JSON.stringify(trivia)}\n\ntotal questions: ${total_questions}\n\nuser signed in is: ${user_signed_in}`);
 }
 
 async function start_game(){ //Function is async because of API call

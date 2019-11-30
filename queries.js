@@ -12,6 +12,8 @@ const cn = {
 }
 const db = pgp(cn)
 
+
+
 const createUser = async (user_name, user_pwd) => {
     // const db = pgp(cn)
     // console.log('connected to psql db')
@@ -32,6 +34,8 @@ const createUser = async (user_name, user_pwd) => {
     })
     // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
 }
+
+
 
 const userCheckandAdd = async (user_name, user_pwd) => {
     // const db = pgp(cn)
@@ -61,6 +65,8 @@ const userCheckandAdd = async (user_name, user_pwd) => {
     return canAdd;
 }
 
+
+
 const userSignIn = async (user_name, user_pwd) => {
     // const db = pgp(cn)
     console.log('connected to psql db')
@@ -88,6 +94,8 @@ const userSignIn = async (user_name, user_pwd) => {
     return canSignIn;
 }
 
+
+
 const deleteUser = async (user_name) => {
     // const db = pgp(cn)
     // console.log('connected to psql db')
@@ -104,6 +112,8 @@ const deleteUser = async (user_name) => {
     // .finally(db.$pool.end); // For immediate app exit, shutting down the connection pool
     return 1;
 }
+
+
 
 module.exports = {
     createUser,
