@@ -29,7 +29,8 @@ var apiURL;
 //Onclick Function calls from HTML
 //---------------------------------------
 
-function load(){ //Hides the buttons until start game is pressed. 
+function load(){ //Hides the buttons until start game is pressed.
+    document.getElementById("display_wrapper").style.visibility = 'hidden'; 
     document.getElementById("guess_buttons").style.visibility = 'hidden';
     document.getElementById("current_question").style.visibility = 'hidden';
     document.getElementById("next_question").style.visibility = 'hidden';
@@ -49,7 +50,6 @@ async function start_game(){ //Function is async because of API call
     //   apiURL = 'https://opentdb.com/api.php?amount=10&type=multiple';
     //   total_questions = 11; 
     // }
-    score = 0;
     //Call API 
     //TODO: update method with passed in url or other idea. 
     //A good idea might be to move the API call to the load() function?
@@ -67,6 +67,7 @@ async function start_game(){ //Function is async because of API call
     
     //Show the buttons on the screen and hide start button
     document.getElementById("start").style.visibility = 'hidden';
+    document.getElementById("display_wrapper").style.visibility = 'visible';
     document.getElementById("guess_buttons").style.visibility = 'visible';
     document.getElementById("current_question").style.visibility = 'visible';
     document.getElementById("next_question").style.visibility = 'visible';
@@ -127,10 +128,11 @@ function display_next_question(){
     document.getElementById("D_button_text").innerHTML = answer_options[3];
 
     //Display text for questions
-    document.getElementById("display_question_number").innerHTML = `QUESTION ${question_count+1}: `;
+    document.getElementById("display_question_number").innerHTML = `Question #${question_count+1} of ${total_questions} `;
     document.getElementById("category").innerHTML = `${category} `;
-    document.getElementById("difficulty").innerHTML = `Rating: ${difficulty} `;
+    document.getElementById("difficulty").innerHTML = `${difficulty} `;
     document.getElementById("display_question").innerHTML = question;
+    document.getElementById("display_score").innerHTML = score;
     
     question_count++;
 }
@@ -225,7 +227,7 @@ function guess_answer(button_id){
 
 function start_timer() {
   
-  timer = 10;
+  timer = 15;
   timerId = setInterval(function(){ 
     document.getElementById("timer").innerText = "TIME: "+timer; 
     timer-=1;

@@ -18,6 +18,7 @@
     <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
 </head>
 <body onload="load()">
+    <!-- Navigational Bar -->
     <header>
         <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="navbar-header">
@@ -83,68 +84,77 @@
                 </div>
             </div>
         </nav>
+        <!-- End of the Navigational Bar -->
     </header>
-<main>   
-<div id="bg"></div>
-<div id="display_question_number"></div>
-   
 
-<button id="start" onclick="start_game()">Start a New Game!</button>      
-<!-- Question Display -->
-<input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
-
-<div id="current_question"> 
-<div class="row">
-        <div class="col-2"><div id="difficulty"></div></div>
-        <div class="col-3"><div id="category"></div></div>
-        <div class="col-3"><div id="display_score"></div>
-    </div>
-        <div class="col-2"><div id="timer"></div></div>
-        <div class="col-2"></div>
-</div>  
-</div>  
-<div class="row">
-        <div class="col-2"></div>
-        <div class="col-8"><div id="display_question"></div></div>
-        <div class="col-2"></div>
-    </div>
-    <div id="display_choices">
-    </div>
-  <div id="guess_buttons">
-        <!-- Buttons A & B -->
-        <div class="row">
-            <div class="col-2">Quick Game</div>
-            <div class="col-3"> 
-                <button id= "guess_A" onclick="guess_answer(this.id)">
-                    <div id="A_button_text"></div>
-                </button>
+    <main>   
+        <div id="bg"></div> <!-- Background Image -->
+        <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
+        <div id="display_wrapper">
+            
+            <!-- Question # -->
+            <div class="row">
+                <div class="col-8"><div id="display_question_number"></div></div>
             </div>
-            <div class="col-2">(Filler)</div>
-            <div class="col-3">
-                    <button id= "guess_B" onclick="guess_answer(this.id)">
+
+            <!-- Category, Score, and Timer -->
+            <div id="current_question"></div> 
+            <div class="row">
+                <div class="col-3"><div id="category"></div></div>
+                <div class="col-3"><div id="display_score"></div></div>
+                <div class="col-2"><div id="timer"></div></div>
+            </div>
+
+            <!-- Difficulty -->
+            <div class="row">
+                <div class="col-8"><div id="difficulty"></div></div>
+            </div>  
+  
+            <!-- Question -->
+            <div class="row">
+                <div class="col-8"><div id="display_question"></div></div>
+            </div>
+            
+              <!-- Answer Options -->
+            <div id="display_choices"></div>
+            <div id="guess_buttons">
+                <!-- Buttons A & B -->
+                <div class="row">
+                    <div class="col-4"> 
+                        <button id= "guess_A" onclick="guess_answer(this.id)">
+                            <div id="A_button_text"></div>
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <button id= "guess_B" onclick="guess_answer(this.id)">
                             <div id="B_button_text"></div>
+                        </button>
+                    </div>
+                </div>
+                <!-- Buttons C & D -->
+                <div class="row">
+                    <div class="col-4">  
+                        <button id= "guess_C" onclick="guess_answer(this.id)">
+                            <div id="C_button_text"></div>
+                        </button></div>
+                    <div class="col-4">    
+                        <button id= "guess_D" onclick="guess_answer(this.id)">
+                            <div id="D_button_text"></div>
                     </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div id="display_feedback"></div>     
+                    </div>
+                </div>
             </div>
-            <div class="col-2">(Filler)</div>
-        </div>
-    <!-- Buttons C & D -->
-        <div class="row">
-            <div class="col-2">(Filler)</div>
-            <div class="col-3">  
-                <button id= "guess_C" onclick="guess_answer(this.id)">
-                    <div id="C_button_text"></div>
-                </button></div>
-            <div class="col-2">(Filler)</div>
-            <div class="col-3">    
-                <button id= "guess_D" onclick="guess_answer(this.id)">
-                    <div id="D_button_text"></div>
-                </button>
-            </div>
-            <div class="col-2">(Filler)</div>
-        </div>
-  </div>
-  <div id="display_feedback"></div>    
-    <button id="next_question" onclick="display_next_question()">Next Question</button>
+    </div>
+        <button id="start" onclick="start_game()">Start a New Game!</button>     
+        <button id="next_question" onclick="display_next_question()">Next Question</button>
+        
+        
+    
     <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
     <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
 </main> 

@@ -1,3 +1,8 @@
+body{
+    /* background-color: rgb(98, 211, 76); */
+    /* border: 1px solid red; */
+}
+
 #bg {
     background-image: url('../images/corner_questions1.jpg');
     width: 100%;
@@ -9,69 +14,155 @@
     left:0;
     top: 7%;
     bottom:0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+#display_wrapper {
+    /* text-shadow: -1px 0 yellow, 
+                  0 1px yellow, 
+                  1px 0 yellow, 
+                  0 -1px yellow; */
+    border: 1px solid yellowgreen;
+    border-radius: 12px; 
+    background-color: none;
+    /* box-shadow: -1px 1px 1px -1px yellow; */
+    padding: 5%;
+    margin: 8% 20% 0 20%;
     
 }
 
-body{
-    /* background-color: rgb(98, 211, 76); */
-    border: 1px solid red;
-}
-
-.sound_icon{
-    max-height: 20px;
-    max-width: 20px;
-    border: 1px solid red;
-}
-
-h2 {
+/* h2 {
     color: white;
     text-align: center;
     font-family: Pacifico;
     margin-top: 0.5%;
-}
+} */
 
+/* All background */
 .row, .col-2, .col-3, .col-4,
 .col-6, .col-8 {
-    color: white;
-    font-size: 2rem;
+    /* background-image: linear-gradient(dimgray, darkgray,white,grey,dimgray); */
+    background-color: none;
+    font-family: Montserrat;
+    font-size: 1rem;
     text-align: center;
-    border: 1px solid red;
+    
+}
+
+.sound_icon{
+    color: white;
+    max-height: 20px;
+    max-width: 20px;
+    /* border: 1px solid red; */
 }
 
 #start {
-    color: white;
-    border: 1px solid red;
+    color: black;
+    text-align: center;
+    /* border: 1px solid red; */
 }
 
 #display_question_number {
+    background-color: ghostwhite;
+    opacity: 0.5;
     color: white;
-    border: 1px solid red;
+    text-shadow: -1px 0 black, 
+                  0 1px black, 
+                  1px 0 black, 
+                  0 -1px black;
+    border: 1px solid yellowgreen;
+    text-align: center;
+    /* border: 1px solid red; */
 }
 
 #current_question {
     color: white;
-    border: 1px solid red;
+    text-align: center;
+    /* border: 1px solid red; */
 }
 
 #category {
     color: white;
-    border: 1px solid red;
+    border: 1px solid yellowgreen;
+    text-emphasis: center;
+    /* border: 1px solid red; */
+}
+
+#display_score {
+    color: white;
+    border: 1px solid yellowgreen;
+    opacity: 0.5;
+    text-align: center;
+    /* border: 1px solid red; */
 }
 
 #difficulty {
     color: white;
-    border: 1px solid red;
-}
-
-#display_question {
-    color: white;
-    border: 1px solid red;
+    opacity: 0.5;
+    border: 1px solid yellowgreen;
+    text-align: left;
+    /* border: 1px solid red; */
 }
 
 #timer {
     color: white;
-    border: 1px solid red;
+    opacity: 0.5;
+    border: 1px solid yellowgreen;
+    text-align: center;
+    /* border: 1px solid red; */
 }
+
+#display_question {
+    background-color: white;
+    opacity: 0.5;
+    color: white;
+    opacity: 0.5;
+    border: 1px solid yellowgreen;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#display_choices {
+    color: white;
+    border: 1px solid yellowgreen;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#guess_buttons {
+    color: white;
+    opacity: 0.5;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#guess_A, #guess_B, #guess_C, #guess_D {
+    background-color: none;
+    color: white;
+    border: 1px solid yellowgreen;
+    opacity: 0.5;
+    text-align: center;
+    width: 4rem;
+    /* border: 1px solid red; */
+}
+
+#display_feedback {
+    color: white;
+    opacity: 0.5;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+#next_question {
+    color: white;
+    margin-left:auto;
+    margin-right:auto;
+    /* border: 1px solid red; */
+}
+
+
+
+
+
 
 
