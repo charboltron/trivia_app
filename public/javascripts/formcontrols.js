@@ -2,12 +2,12 @@ window.onload = function(){ load_setup(); }
 
 // document.getElementById("btnstartgame").onclick = function() { SubmitGameSetup() };
 
-var user_signed_in = 'a';
+var user_signed_in = '';
 
 function load_setup() { // checks to ensure the user is already logged in
     user_signed_in = localStorage.getItem('userSignedIn');
     console.log(`user_signed_in is: ${user_signed_in}`);
-    if (user_signed_in == (null || 'a' || false )) {
+    if (user_signed_in === (null || '' || false )) {
         console.log('user not signed in');
         alert("Please sign in before choosing game settings.");
         window.location.replace('sign_in');
