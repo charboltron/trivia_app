@@ -1,10 +1,19 @@
+window.onload = function(){ load_setup(); }
 
-document.getElementById("btnstartgame").onclick = function() { SubmitGameSetup() };
+// document.getElementById("btnstartgame").onclick = function() { SubmitGameSetup() };
+
+var user_signed_in = 'a';
 
 function load_setup() { // checks to ensure the user is already logged in
     user_signed_in = localStorage.getItem('userSignedIn');
-    if (user_signed_in) == (NULL || false ) {
-        alert('Please sign in before choosing game settings.');
+    console.log(`user_signed_in is: ${user_signed_in}`);
+    if (user_signed_in == (null || 'a' || false )) {
+        console.log('user not signed in');
+        alert("Please sign in before choosing game settings.");
+        window.location.replace('sign_in');
+    } else {
+        console.log('user seems signed in')
+        alert('this does not make sense')
     }
 }
 
