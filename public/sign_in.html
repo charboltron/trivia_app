@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="resetSignIn()">
     <header>    
         <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="navbar-header">
@@ -84,33 +84,38 @@
     </header>
 
     <main>
-
+        <div id="bg"></div>
         <div id="game_signin_form">
 
-            <form action="/sign_in_submit" method="post">
-                <h3 id="signinMessage">Enter your user name and password.</h3>
+            <form action="/sign_in_submit" method="POST">
+                <h3 id="signinMessage">You have been automatically signed out. Enter your username and password.</h3>
                 <br>            
                 <p><input name="user_name" id="user_name" type="text" placeholder="username"></input></p>
                 <p><input name="user_pwd" id="user_pwd" type="password" placeholder="password"></input></p>
     
                 <button class="btn btn-lg btn-warning btn-block" 
                         style="margin-top: 5%;" 
-                        type="submit"
+                        type="button"
                         name="btnsignin"
                         id="btnsignin">
-                        EXISTING USERS<br>click here to sign in
+                        Sign In
                 </button>
-                
+                <button 
+                        id="hidden_button_sign_in_user"
+                        type="submit"
+                        style="display: none;"
+                ></button>
+                </form>
                 <br>
 
-                <a href="sign_up.html" style="margin-top: 10%;">
-                    NEW USERS go to sign up page
+                <a href="sign_up.html" id="sign_up_link">
+                    Don't have an account? Sign up here.
                 </a>
             </form>
     
         </div>
 
     </main>
-    <script rel="text/javascript" src="../javascripts/signin_stuff.js"></script>
+    <script rel="text/javascript" src="javascripts/signin_stuff.js"></script>
     </body>
 </html>

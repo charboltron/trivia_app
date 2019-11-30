@@ -17,7 +17,9 @@ app.get('/quick_game', function (req, res) {
   })
 
 app.get('/game_setup_solo', function (req, res) {
-     res.sendFile(__dirname+'/public/game_setup.html');
+
+  //res.send(`Currently signed in is: ${app.locals.current_signed_in_user}`);
+  res.sendFile(__dirname+'/public/game_setup.html');
 })
 
 // app.get('/solo_game', function (req, res) {
@@ -110,13 +112,10 @@ app.post('/sign_in_submit', async (req, res) =>{
       <script>window.location.replace('sign_in.html');</script>;
     `);
   } else {
+    req.app.locals.current_signed_in_user = user_name;
+    console.log(`In app.js: setting signed in user to to ${user_name}`)
     res.sendFile(__dirname+'/public/sign_in_success.html');
   }
-
-})
-
-app.get('/sign_in_submit', (req, res) => {
-  res.sendFile(__dirname+'/public/sign_up.html');
 })
 
 app.post('/delete_user_account', async (req, res) =>{ 

@@ -1,22 +1,40 @@
 body {
-    background-color: salmon;
-    color: lightgreen;
+    background-color:black;
+    color: rgb(249, 249, 249);
 }
 
-.header3 {
-    margin-top: 7%;
+#signinMessage{
+    margin-top: 35%;
     text-align: center;
-    font-size: 5em;
+    font-size: 1.5em;
 }
 
+#sign_up_link{
+    margin-top: 10%;
+    color: deepskyblue;
+}
+
+#bg {
+    background-image: url('../images/trivia_night_side.jpg');
+    width: 100%;
+    height: 100%; 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    top: 7%;
+    bottom:0;
+}  
 
 #game_signin_form {
-    width: 33%;
+    width: 40%;
     min-width: 300px;
-    margin-top: 3%;
-    margin-left: auto;
+    margin-top: 10%;
+    margin-left: 35%;
     margin-right: auto;
     text-align: center;
+    border: ;
 }
 
 form {
