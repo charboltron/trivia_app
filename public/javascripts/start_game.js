@@ -185,10 +185,10 @@ function guess_answer(button_id){
                 bonus = 0;
                 break;
                 case "medium":
-                bonus = 2;
+                bonus = 200;
                 break;
                 case "hard":
-                bonus = 4;
+                bonus = 300;
                 break;
             default:
                 bonus = 0;
@@ -198,6 +198,7 @@ function guess_answer(button_id){
           if(points === 0){
             points++;
           }
+          points*=100;
           score+= points+bonus;
         }
         let plural = (points === 1? '' : 's');
@@ -209,8 +210,38 @@ function guess_answer(button_id){
         }
     }
     else{
-        document.getElementById("display_feedback").innerHTML = `Wrong! The answer was: 
-        ${current_question.correct_answer}` ;
+        var penalty = 0;
+        if(timer > 12){
+          penalty = 500;
+        }else if(timer > 9){
+          penalty = 250;
+        }
+        var penal_factor;
+        switch(current_question.difficulty){
+          case "easy":
+              penal_factor = 300;
+              break;
+              case "medium":
+              penal_factor = 200;
+              break;
+              case "hard":
+              penal_factor = 0;
+              break;
+          default:
+              penal_factor = 0;
+      }
+        var penal_total = penalty+penal_factor;
+        score -= penal_total;
+        var penal_flag = false;
+        if(penal_total != 0){
+          penal_flag = true;
+        }
+        var feedback_string = `Wrong! The answer was: 
+        ${current_question.correct_answer}. `;
+        if(penal_flag){
+          feedback_string += `Penalty: -${penal_total}`;
+        } 
+        document.getElementById("display_feedback").innerHTML = feedback_string;
         if(sound){
             var chime = document.getElementById("audio_incorrect"); 
             chime.play(); 
@@ -229,7 +260,7 @@ function guess_answer(button_id){
 
 function start_timer() {
   
-  timer = 10;
+  timer = 15;
   timerId = setInterval(function(){ 
     document.getElementById("timer").innerText = "TIME: "+timer; 
     timer-=1;

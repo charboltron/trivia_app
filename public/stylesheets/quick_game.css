@@ -29,7 +29,7 @@ h1 {
 }
 
 #start {
-    color: white;
+    color: black;
     border: 1px solid red;
 }
 
@@ -61,6 +61,14 @@ h1 {
 #timer {
     color: white;
     border: 1px solid red;
+}
+
+#display_feedback {
+    color:white;
+}
+
+#display_score {
+    color: white;
 }
 
 
