@@ -34,6 +34,7 @@ button[type=submit],[type=button], #friend_game {
     border-radius: 7px;
     padding: 3%;
     margin: 1% auto;
+    width: 22rem;
 }
 
 button[type=submit]:hover,[type=button]:hover {
