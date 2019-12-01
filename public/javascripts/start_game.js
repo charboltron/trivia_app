@@ -30,10 +30,10 @@ var apiURL;
 //---------------------------------------
 
 function load(){ //Hides the buttons until start game is pressed.
-    document.getElementById("display_wrapper").style.visibility = 'hidden'; 
-    document.getElementById("guess_buttons").style.visibility = 'hidden';
-    document.getElementById("current_question").style.visibility = 'hidden';
-    document.getElementById("next_question").style.visibility = 'hidden';
+    document.getElementById("display_wrapper").style.display = 'none'; 
+    document.getElementById("guess_buttons").style.display = 'none';
+    document.getElementById("current_question").style.display = 'none';
+    document.getElementById("next_question").style.display = 'none';
     trivia = JSON.parse(localStorage.getItem('apiJSON'));    
     console.log(`trivia: ${JSON.stringify(trivia)}`);
     total_questions = localStorage.getItem('questionCount');
@@ -67,11 +67,11 @@ async function start_game(){ //Function is async because of API call
     
     //Show the buttons on the screen and hide start button
     document.getElementById("start").style.display = 'none';
-    document.getElementById("display_wrapper").style.visibility = 'visible';
-    document.getElementById("guess_buttons").style.visibility = 'visible';
-    document.getElementById("current_question").style.visibility = 'visible';
-    document.getElementById("next_question").style.visibility = 'visible';
-    
+    document.getElementById("display_wrapper").style.display = 'inherit';
+    document.getElementById("guess_buttons").style.display = 'inherit';
+    document.getElementById("current_question").style.display = 'inherit';
+    document.getElementById("next_question").style.display = 'inherit';
+   
     display_next_question();
   }
 
@@ -128,8 +128,8 @@ function display_next_question(){
     document.getElementById("D_button_text").innerHTML = answer_options[3];
 
     //Display text for questions
-    document.getElementById("display_question_number").innerHTML = `Question #${question_count+1} of ${total_questions} `;
-    document.getElementById("category").innerHTML = `${category} `;
+    document.getElementById("display_question_number").innerHTML = `Q${question_count+1} of ${total_questions} `;
+    document.getElementById("category").innerHTML = `${category}-`;
     document.getElementById("difficulty").innerHTML = `${difficulty} `;
     document.getElementById("display_question").innerHTML = question;
     document.getElementById("display_score").innerHTML = score;

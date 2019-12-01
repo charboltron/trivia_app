@@ -18,17 +18,15 @@ body{
     /* border: 1px solid red; */
 }
 
-#display_wrapper {
-    /* text-shadow: -1px 0 yellow, 
-                  0 1px yellow, 
-                  1px 0 yellow, 
-                  0 -1px yellow; */
-    border: 1px solid yellowgreen;
+ #display_wrapper { 
+    background-color: ghostwhite;
+    color: black;
+    border: 3px solid yellowgreen;
     border-radius: 12px; 
     background-color: none;
-    /* box-shadow: -1px 1px 1px -1px yellow; */
-    padding: 5%;
-    margin: 5% 25% 2% 25%;
+    /* box-shadow: -1px 1px 1px -1px yellow;  */
+    padding: 1%;
+    margin: 5% 25% 1% 25%;
     
 }
 
@@ -58,114 +56,137 @@ body{
 
 #start {
     border-radius: 12px;
-    background-color: ghostwhite;
-    opacity: 0.70;
-    color: black;
+    color: white;
+    /* font-family: 'Pacifico'; */
     font-family: Montserrat;
     font-size: xx-large;
     font-weight: bold;
+    text-shadow: -1px 0 black, 
+                  0 2px black, 
+                  2px 0 black, 
+                  0 -1px black; 
     text-align: center;
-    padding: 2% 3%;
-    margin: 12% 35% 0% 35%;
+    background-color: crimson;
+    border: 2.5px solid white;
+    border-radius: 7px;
+    padding: 3%;
+    margin: 14% 35% 0% 35%;
     width: 30%;
     /* border: 1px solid red; */
 }
 
 #display_question_number {
     background-color: ghostwhite;
-    opacity: 0.5;
-    color: white;
-    text-shadow: -1px 0 black, 
-                  0 1px black, 
-                  1px 0 black, 
-                  0 -1px black;
-    border: 1px solid yellowgreen;
+    color: black;
+    border: 1px solid black;
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #current_question {
-    color: white;
+    background-color: ghostwhite;
+    color: black;
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #category {
-    color: white;
-    border: 1px solid yellowgreen;
-    text-emphasis: center;
+    background-color: ghostwhite;
+    color: black;
+    /* border: 1px solid black; */
+    text-align: left;
+    display:inline;
     /* border: 1px solid red; */
 }
 
 #display_score {
-    color: white;
-    border: 1px solid yellowgreen;
-    opacity: 0.5;
+    background-color: ghostwhite;
+    color: black;
+    border: 1px solid black;
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #difficulty {
-    color: white;
-    opacity: 0.5;
-    border: 1px solid yellowgreen;
+    background-color: ghostwhite;
+    color: black;
+    /* border: 1px solid black; */
     text-align: left;
+    display:inline;
     /* border: 1px solid red; */
 }
 
 #timer {
-    color: white;
-    opacity: 0.5;
-    border: 1px solid yellowgreen;
+    background-color: ghostwhite;
+    color: black;
+    font-size: x-large;
+    /* border: 1px solid black; */
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #display_question {
-    background-color: white;
-    opacity: 0.5;
-    color: white;
-    opacity: 0.5;
-    border: 1px solid yellowgreen;
+    background-color: ghostwhite;
+    color: black;
+    font-size: large;
+    border: 1px solid black;
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #display_choices {
-    color: white;
-    border: 1px solid yellowgreen;
+    background-color: ghostwhite;
+    color: black;
+    border: 1px solid black;
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #guess_buttons {
+    background-color: ghostwhite;
     color: black;
-    /* color: white;
-    opacity: 0.5; */
     text-align: center;
+    /* width: 2rem; */
     /* border: 1px solid red; */
 }
 
 #guess_A, #guess_B, #guess_C, #guess_D {
-    background-color: none;
+    background-color: ghostwhite;
     color: black;
-    border: 1px solid yellowgreen;
-    opacity: 0.5;
+    border: 1px solid black;
+    font-size: large;
     text-align: center;
-    width: 4rem;
+    width: 90%;
+    padding: 10%;
+    margin: 3% 5%;
+    
+    /* width: 4rem; */
     /* border: 1px solid red; */
 }
 
 #display_feedback {
-    color: white;
-    opacity: 0.5;
+    background-color: ghostwhite;
+    color: black;
     text-align: center;
     /* border: 1px solid red; */
 }
 
 #next_question {
-    color: black;
-    margin: 1% 20% 0 20%;
+    border-radius: 12px;
+    color: white;
+    /* font-family: 'Pacifico'; */
+    font-family: Montserrat;
+    font-size: large;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 
+                  0 2px black, 
+                  2px 0 black, 
+                  0 -1px black; 
+    text-align: center;
+    background-color: crimson;
+    border: 2.5px solid white;
+    margin: 0 40%;
+    padding: 0.5% 2%;
     width: 20%;
     /* border: 1px solid red; */
 }
