@@ -45,23 +45,7 @@ function load(){ //Hides the buttons until start game is pressed.
 
 async function start_game(){ //Function is async because of API call
 
-    // console.log(setting);
-    // if(setting != 'default'){
-    //   apiURL = localStorage.getItem('storedURL');
-    //   total_questions = localStorage.getItem('questionCount');
-    // } else{
-    //   apiURL = 'https://opentdb.com/api.php?amount=10&type=multiple';
-    //   total_questions = 11; 
-    // }
     score = 0;
-    //Call API 
-    //TODO: update method with passed in url or other idea. 
-    //A good idea might be to move the API call to the load() function?
-    // let response = await fetch(apiURL);
-    // let data = await response.json();
-    // console.log(`response code: ${data.response_code}`);
-    
-    //console.log(trivia);
     
     //Reset variables
     question_count = 0;
@@ -73,13 +57,13 @@ async function start_game(){ //Function is async because of API call
     document.getElementById("start").style.visibility = 'hidden';
     document.getElementById("guess_buttons").style.visibility = 'visible';
     document.getElementById("current_question").style.visibility = 'visible';
-    document.getElementById("next_question").style.visibility = 'visible';
     
     display_next_question();
   }
 
 function display_next_question(){
     
+    document.getElementById("next_question").style.visibility = 'hidden';
     //Timer
     clearInterval(timerId);
     times_up = false;
@@ -193,6 +177,10 @@ function guess_answer(button_id){
             default:
                 bonus = 0;
         }
+          var bonus_flag = false;
+          if(bonus > 0){
+            bonus_flag = true;
+          }
           var points = Math.ceil(timer/2);
           console.log(points);
           if(points === 0){
@@ -249,8 +237,16 @@ function guess_answer(button_id){
         //console.log(`Wrong! The answer was: ${current_question["answer"]}. ${current_question[current_question["answer"]]}`);
     }
 
-    //Update score
-    document.getElementById("display_score").innerHTML = `Score: ${score}`;
+    //Update scores
+    if(penal_flag){
+      document.getElementById("display_penalty").innerHTML = `PENALTY:\n${penal_total}`;
+    }
+    if(bonus_flag){
+      document.getElementById("display_bonus").innerHTML = `BONUS:\n${bonus}`;
+    }
+    document.getElementById("display_score").innerHTML = `SCORE:\n${score}`;
+
+    document.getElementById("next_question").style.visibility = 'visible';
 }
 
 

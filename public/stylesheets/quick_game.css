@@ -9,13 +9,14 @@
     left:0;
     top: 7%;
     bottom:0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     
 }
 
 body{
+    color: white;
     /* background-color: rgb(98, 211, 76); */
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .sound_icon{
@@ -23,7 +24,9 @@ body{
     min-height: 45px;
     max-height: 45px;
     max-width: 50px;
-    border: 1px solid red;
+    margin-left:25px;
+    margin-top: 25px;
+    /* border: 1px solid red; */
 }
 
 h1 {
@@ -31,46 +34,82 @@ h1 {
 }
 
 #start {
+    width:100%;
+    height: 100%;
+
     color: black;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #display_question_number {
+    margin: auto;
     color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #current_question {
+    margin: auto;
     color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #category {
+    margin:auto;
     color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #difficulty {
+    margin: auto;
     color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #display_question {
+    
     color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+#next_question {
+
 }
 
 #timer {
+    margin:auto;
     color: white;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #display_feedback {
     color:white;
+    margin-top: 25px;
+    margin-left: 33%;
+    margin-right: 33%;
 }
 
 #display_score {
+    font-size: 2em;
+    margin-top: 20%;
+    margin-left: 45%;
     color: white;
+}
+
+#display_bonus{
+    font-size: 2em;
+    margin-top: 20%;
+    margin-right: 45%;
+}
+
+#display_penalty{
+    font-size: 2em;
+    margin-top: 20%;
+    margin-right: 45%;
+}
+
+#guess_A, #guess_B, #guess_C, #guess_D{
+    height: 90%;
+    width: 100%;
 }
 
 
