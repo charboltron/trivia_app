@@ -1,6 +1,7 @@
 html, body, .grid-container { height: 95%; margin: 0; }
 
 .grid-container * { 
+
  /* border: 1px solid red; */
  position: relative;
 }
@@ -33,7 +34,7 @@ html, body, .grid-container { height: 95%; margin: 0; }
   display: grid;
   grid-template-columns: 1fr 1.1fr 0.9fr;
   grid-template-rows: .5fr 1fr 1fr;
-  grid-template-areas: "category difficulty timer" 
+  grid-template-areas: "question_number category timer" 
                        "display_question display_question display_question" 
                        "guesses guesses guesses";
   grid-area: game;
@@ -41,7 +42,7 @@ html, body, .grid-container { height: 95%; margin: 0; }
 
 .category { grid-area: category; }
 
-.difficulty { grid-area: difficulty; }
+.question_number { grid-area: question_number; }
 
 .timer { grid-area: timer; }
 

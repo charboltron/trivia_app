@@ -95,57 +95,57 @@
     
     <div id="bg"></div>
     <div class="grid-container">
-            <div class="top">
-                <!-- <h1 id="quick_game">Quick Game!</h1> -->
-                <input type="image" class="sound_icon" src="images/sound_icon_off_white.png" id="toggle_sound" onclick="toggle_sound()"></button>
-            </div>
-            <div class="left-side">
-                <div id="display_bonus">BONUS:</div>
-                <div id="display_penalty">PENALTY:</div>
-            </div>
-            <div class="right-side">
-                <div id="display_score">SCORE:</div>
-            </div>
-            <div class="bottom">
-                <div id="display_feedback"></div>
-            </div>
             
-            <div class="game">
+        <div class="top">
+             <!-- <h1 id="quick_game">Quick Game!</h1> -->
+             <div id="display_score" class="display_score"></div>  
+        </div>
+
+        <div class="left-side">
+            <input type="image" class="sound_icon" src="images/sound_icon_off_white.png" id="toggle_sound"
+                onclick="toggle_sound()">
+            </button>
+        </div>
+        <div class="right-side"></div>
+        <div class="bottom">
+            <div id="display_feedback"></div>
+            <button id="next_question" onclick="display_next_question()">Next Question!</button>
+        </div>
+            
+        <div class="game">
+                <div id="display_question_number"></div> 
                 <div id="category" class="category"></div>
-                <div id="difficulty" class="difficulty"></div>
-                <div class="timer" id="timer"></div>
+                <div id="timer" class="timer"></div>
                 <div class="display_question" id="display_question">
-                    <div id="display_question_number"></div>
-                    <button id="start" onclick="start_game()">Start a New Game!</button>    
-                    <div id="current_question">Current Question:</div>
+                    <button id="start" onclick="start_game()">START NEW GAME!</button>   
+                </div>      
+                
+            <div class="guesses" id="guess_buttons">
+                <div class="A">
+                    <button id="guess_A" onclick="guess_answer(this.id)">
+                        <div id="A_button_text"></div>
+                    </button>
                 </div>
-                <button id="next_question" onclick="display_next_question()">Next Question!</button>
-                <div class="guesses" id="guess_buttons">
-                    <div class="A">
-                        <button id="guess_A" onclick="guess_answer(this.id)">
-                            <div id="A_button_text"></div>
-                        </button>
-                    </div>
-                    <div class="B">
-                        <button id="guess_B" onclick="guess_answer(this.id)">
-                            <div id="B_button_text"></div>
-                        </button>
-                    </div>
-                    <div class="C">
-                        <button id="guess_C" onclick="guess_answer(this.id)">
-                            <div id="C_button_text"></div>
-                        </button>
-                    </div>
-                    <div class="D">
-                        <button id="guess_D" onclick="guess_answer(this.id)">
-                            <div id="D_button_text"></div>
-                        </button>
-                    </div>
+                <div class="B">
+                    <button id="guess_B" onclick="guess_answer(this.id)">
+                        <div id="B_button_text"></div>
+                    </button>
                 </div>
-            </div>
+                <div class="C">
+                    <button id="guess_C" onclick="guess_answer(this.id)">
+                        <div id="C_button_text"></div>
+                    </button>
+                </div>
+                <div class="D">
+                    <button id="guess_D" onclick="guess_answer(this.id)">
+                        <div id="D_button_text"></div>
+                    </button>
+                </div>
+                </div>
+        </div>
     </div>
             <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
             <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav"></audio>
-
+            <audio source id="final_3_seconds" src="./sound/final_3_seconds.wav" type="audio/wav"></audio>
 </body>
 </html>
