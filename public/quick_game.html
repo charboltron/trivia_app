@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="stylesheets/quick_game_grid.css">
     <link rel="stylesheet" href="stylesheets/quick_game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -87,51 +88,64 @@
         </nav>
     </header>
 
+    <!-- <div id="display_question_number"></div>
+  
+        <div id="display_choices">
+    </div> -->
     
     <div id="bg"></div>
-    <h1>Quick Game</h1>
-    <input type="image" class="sound_icon" src="images/sound_icon_off_white.png" id="toggle_sound" onclick="toggle_sound()"></button>
-    <br>
-    <button id="start" onclick="start_game()">Start a New Game!</button>
-    <br><br>
-    <div id="display_question_number"></div>
-    <br>
-    <div id="current_question"> 
-        <div id="category"></div>
-        <br>
-        <div id="difficulty"></div> 
-        <br>
-        <div id="display_question"></div>
+    <div class="grid-container">
+            
+        <div class="top">
+             <!-- <h1 id="quick_game">Quick Game!</h1> -->
+             <div id="display_score" class="display_score"></div>  
+        </div>
+
+        <div class="left-side">
+            <input type="image" class="sound_icon" src="images/sound_icon_off_white.png" id="toggle_sound"
+                onclick="toggle_sound()">
+            </button>
+        </div>
+        <div class="right-side"></div>
+        <div class="bottom">
+            <div id="display_feedback"></div>
+            <button id="next_question" onclick="display_next_question()">Next Question!</button>
+        </div>
+            
+        <div class="game">
+                <div id="display_question_number"></div> 
+                <div id="category" class="category"></div>
+                <div id="timer" class="timer"></div>
+                <div class="display_question" id="display_question">
+                    <button id="start" onclick="start_game()">START NEW GAME!</button>   
+                </div>      
+                
+            <div class="guesses" id="guess_buttons">
+                <div class="A">
+                    <button id="guess_A" onclick="guess_answer(this.id)">
+                        <div id="A_button_text"></div>
+                    </button>
+                </div>
+                <div class="B">
+                    <button id="guess_B" onclick="guess_answer(this.id)">
+                        <div id="B_button_text"></div>
+                    </button>
+                </div>
+                <div class="C">
+                    <button id="guess_C" onclick="guess_answer(this.id)">
+                        <div id="C_button_text"></div>
+                    </button>
+                </div>
+                <div class="D">
+                    <button id="guess_D" onclick="guess_answer(this.id)">
+                        <div id="D_button_text"></div>
+                    </button>
+                </div>
+                </div>
+        </div>
     </div>
-    <br>    
-  
-    <div id="display_choices">
-    </div>
-    <br>
-    <div id="guess_buttons">
-        <button id= "guess_A" onclick="guess_answer(this.id)">
-            <div id="A_button_text"></div>
-        </button>
-        <button id= "guess_B" onclick="guess_answer(this.id)">
-            <div id="B_button_text"></div>
-        </button>
-        <button id= "guess_C" onclick="guess_answer(this.id)">
-            <div id="C_button_text"></div>
-        </button>
-        <button id= "guess_D" onclick="guess_answer(this.id)">
-            <div id="D_button_text"></div>
-        </button>
-    </div>
-    <br>
-    <div id="display_feedback"></div>
-    <br>
-    <div id="display_score"></div>
-    <br>
-    <button id="next_question" onclick="display_next_question()">Next Question</button>
-    <br>
-    <br>
-    <div id="timer"></div>
-    <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
-    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
+            <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
+            <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav"></audio>
+            <audio source id="final_3_seconds" src="./sound/final_3_seconds.wav" type="audio/wav"></audio>
 </body>
 </html>

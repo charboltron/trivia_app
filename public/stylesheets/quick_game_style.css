@@ -1,0 +1,65 @@
+html, body, .grid-container { height: 95%; margin: 0; }
+
+.grid-container * { 
+ border: 1px solid red;
+ position: relative;
+}
+
+.grid-container *:after { 
+ /* content:attr(class); */
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.0fr 1.0fr 1.0fr 1.0fr;
+  grid-template-rows: 0.6fr 2.0fr 0.4fr;
+  grid-template-areas: "top top top top" 
+                        "left-side game game right-side" 
+                        "bottom bottom bottom bottom";
+}
+
+.top { grid-area: top; }
+
+.left-side { grid-area: left-side; }
+
+.right-side { grid-area: right-side; }
+
+.bottom { grid-area: bottom; }
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 0.9fr;
+  grid-template-rows: .5fr 1fr 1fr;
+  grid-template-areas: "category difficulty timer" 
+                       "display_question display_question display_question" 
+                       "guesses guesses guesses";
+  grid-area: game;
+}
+
+.category { grid-area: category; }
+
+.difficulty { grid-area: difficulty; }
+
+.timer { grid-area: timer; }
+
+.display_question { grid-area: display_question; }
+
+.guesses {
+  display: grid;
+  grid-template-columns: 1.6fr 0.1fr 1.6fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "A . B" 
+                       "C . D";
+  grid-area: guesses;
+}
+
+.A { grid-area: A; }
+
+.B { grid-area: B; }
+
+.C { grid-area: C; }
+
+.D { grid-area: D; }
