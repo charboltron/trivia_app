@@ -279,7 +279,7 @@ function display_text_for_questions(){
   let difficulty = current_question.difficulty;
   difficulty = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
 
-  document.getElementById("display_question_number").innerHTML = `QUESTION ${question_count+1} of ${total_questions} `;
+  document.getElementById("display_question_number").innerHTML = `Question ${question_count+1} of ${total_questions} `;
   document.getElementById("category").innerHTML = `${category} -  ${difficulty} `;
   document.getElementById("display_score").innerHTML = `SCORE: ${score} `;
   document.getElementById("display_question").innerHTML = question;
