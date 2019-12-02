@@ -94,9 +94,6 @@ function guess_answer(button_id){
     //Timer
     clearInterval(timerId);
     
-    //console.log("guessed: "+guessed);
-    //console.log("started: "+started);
-    
     //Unusual circumstances
     if(guessed || !started){
         return;
@@ -105,25 +102,10 @@ function guess_answer(button_id){
     guessed = true;
     
     //Handle button clicked logic 
-    var guess_letter;
-    switch(button_id){
-        case "guess_A":
-            guess_letter = answer_options[0];
-            break;
-        case "guess_B":
-            guess_letter = answer_options[1];
-            break;
-        case "guess_C":
-            guess_letter = answer_options[2];
-            break;
-        case "guess_D":
-            guess_letter = answer_options[3];
-            break;
-        default:
-            guess_letter="None"; //??
-    }
-    //console.log(`${guess_letter} button was pressed`);
-    //console.log(`You chose: ${guess_letter}. ${current_question[guess_letter]}`);
+    var guess_letter = get_guess_letter(button_id);
+
+    // console.log(`${guess_letter} button was pressed`);
+    // console.log(`You chose: ${guess_letter}. ${current_question[guess_letter]}`);
     
     //Determine correct or not, award points, give feedback
     if(guess_letter === current_question.correct_answer){
@@ -342,4 +324,26 @@ function put_questions_on_buttons(){
   document.getElementById("C_button_text").innerHTML = answer_options[2];
   document.getElementById("D_button_text").innerHTML = answer_options[3];
 
+}
+
+function get_guess_letter(button_id){
+  
+  let guess = '';
+  switch(button_id){
+    case "guess_A":
+        guess = answer_options[0];
+        break;
+    case "guess_B":
+        guess = answer_options[1];
+        break;
+    case "guess_C":
+        guess = answer_options[2];
+        break;
+    case "guess_D":
+        guess = answer_options[3];
+        break;
+    default:
+        guess_letter="None"; //??
+  }
+  return guess;
 }
