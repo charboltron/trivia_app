@@ -33,7 +33,7 @@ h1 {
     position: relative;
 }
 
-button[type=submit],[type=button] {
+/* button[type=submit],[type=button] {
     font-family: 'Montserrat';
     font-size: 2.5em;
     background-color: crimson;
@@ -52,7 +52,48 @@ button[type=submit]:hover,[type=button]:hover {
     border-radius: 7px;
     padding: 3%;
     margin: 2% auto;
+} */
+
+button {
+    font-family: 'Montserrat';
+    font-size: 2.5em;
+    background-color: crimson;
+    color: white;
+    border: 2.5px solid white;
+    border-radius: 7px;
+    padding: 3%;
+    margin: 1% auto;
+    width: 30rem;
 }
+
+#quick_game:hover span, #solo_game:hover span, #friend_game:hover span {
+    display:none;
+}
+  
+#quick_game:hover:after {
+    content:"10 Questions. Random Difficulties and Categories.";
+ }
+
+ #solo_game:hover:after {
+    content:"Choose the Number of Questions, Category and Difficulty.";
+ }
+
+ #friend_game:hover:after {
+    content:"Face Off against Friend/Competitor in Quick Game";
+ }
+
+ #quick_game:hover, #solo_game:hover, #friend_game:hover {
+    font-size: 1.5em;
+    background-color: white;
+    color: red;
+    border: 2.5px solid red;
+  }
+
+
+  
+
+
+
 
 footer {
     background-color: #555;
@@ -68,54 +109,3 @@ footer {
     overflow: hidden;
     text-align: center;
   }
-
-
-/*
-####################################################
-M E D I A  Q U E R I E S
-####################################################
-Link: https://bootstrapcreative.com/bootstrap-4-media-queries/
-*/
-
-/*
-::::::::::::::::::::::::::::::::::::::::::::::::::::
-Bootstrap 4 breakpoints
-*/
- 
-/* 
-Extra small devices (portrait phones, less than 576px) 
-No media query since this is the default in Bootstrap because it is "mobile first"
-*/
- 
- 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {  
- 
-}
- 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {  
- 
-}
- 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
- 
-}
- 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  
-    
-}
- 
- 
- 
-/*
-::::::::::::::::::::::::::::::::::::::::::::::::::::
-Custom media queries
-*/
- 
-/* Set width to make card deck cards 100% width */
-@media (max-width: 950px) { 
- 
-}

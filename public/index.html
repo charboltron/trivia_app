@@ -54,19 +54,7 @@
                                     <a class="dropdown-item" href="head_to_head.html">Head-to-Head</a>
                                 </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                        <a 
-                                            class="nav-link" 
-                                            href="#" id="navbardrop" 
-                                            data-toggle="dropdown"
-                                        >
-                                        About
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="about_game.html">Game</a>
-                                            <a class="dropdown-item" href="about_team.html">Trivia Night Team</a>
-                                        </div>
-
+                            <li class="nav-item"><a class="nav-link" href="about_team.html">About Team</a></li>
                             <li class="nav-item dropdown">
                                     <a 
                                         class="nav-link" 
@@ -99,7 +87,7 @@
                                 <span id="trivia_night">Trivia Night</span> !</h1>
                             <form action="/quick_game" method="get">
                                 <button type="button" id="quick_game" name="quick_game" onclick="">
-                                Quick Game
+                                    <span>Quick Game</span>
                                 </button>
                                 <button type="submit" id="hidden_quick_game_button" style="display: none;"></button>
                             </form>
@@ -109,16 +97,17 @@
                                         id="solo_game" 
                                         name="game_setup_solo" 
                                         onclick="">
-                                Solo Game
+                                <span>Solo Game</span>
                                 </button>
                             </form>
                             <form action="/game_setup_friend" method="get">
                                 <button 
                                         type="submit" 
-                                        id="friend_game" 
-                                        name="game_setup_friend" 
+                                        id="friend_game"
+                                        name="game_setup_friend"
+                                        data-hover='Play quick game against a competitor!'' 
                                         onclick="">
-                                Head-to-Head
+                                <span>Head-to-Head</span>
                                 </button>
                             </form>
                     </div>
