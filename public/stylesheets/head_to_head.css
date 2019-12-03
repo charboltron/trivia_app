@@ -1,0 +1,27 @@
+/* body {
+    background-color: darkslategray;
+    color: white;
+} */
+
+#bg {
+    background-image: url('../images/coming_soon_bubble.jpg');
+    width: 100%;
+    height: 100%; 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    left:0;
+    top: 7%; 
+    bottom:0;
+}  
+
+h1 {
+    color: white;
+    font-family: Pacifico; 
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+    margin: 2% auto 1%;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+

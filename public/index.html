@@ -50,8 +50,8 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="quick_game.html">Quick Game</a>
-                                    <a class="dropdown-item" href="solo.html">Solo Game</a>
-                                    <a class="dropdown-item" href="#" disabled>Head-to-Head</a>
+                                    <a class="dropdown-item" href="game_setup.html">Solo Game</a>
+                                    <a class="dropdown-item" href="head_to_head.html">Head-to-Head</a>
                                 </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -96,10 +96,7 @@
                     </div>
                     <div class="col-sm-6"> 
                             <h1>Welcome to 
-                                <span 
-                                    style="font-family: Pacifico; 
-                                           text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow">
-                                Trivia Night</span> !</h1>
+                                <span id="trivia_night">Trivia Night</span> !</h1>
                             <form action="/quick_game" method="get">
                                 <button type="button" id="quick_game" name="quick_game" onclick="">
                                 Quick Game
@@ -107,7 +104,11 @@
                                 <button type="submit" id="hidden_quick_game_button" style="display: none;"></button>
                             </form>
                             <form action="/game_setup_solo" method="get">
-                                <button type="submit" id="solo_game" name="game_setup_solo" onclick="">
+                                <button 
+                                        type="submit" 
+                                        id="solo_game" 
+                                        name="game_setup_solo" 
+                                        onclick="">
                                 Solo Game
                                 </button>
                             </form>
@@ -116,9 +117,8 @@
                                         type="submit" 
                                         id="friend_game" 
                                         name="game_setup_friend" 
-                                        onclick="" disabled
-                                >
-                                         Head-to-Head
+                                        onclick="">
+                                Head-to-Head
                                 </button>
                             </form>
                     </div>
