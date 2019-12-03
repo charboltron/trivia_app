@@ -181,9 +181,18 @@ const qryLeaderboard = async () => {
     console.log('querying the leaderboard');
     let leaderboard = 'empty';
     await db.tx( async t => {
+        await t.none(
+            `UPDATE scores
+            SET usrnm = 'Guest'
+            WHERE 
+                usrnm IS NULL 
+                OR usrnm = ''
+                OR usrnm = 'test';`
+        );
         const leaders = await t.many(
             `SELECT usrnm as user, count(id) as number_of_games, sum(score) as total_score
             FROM scores
+            WHERE usrnm IS NOT NULL AND usrnm <> ''
             GROUP BY usrnm
             ORDER BY total_score DESC;`);
         return {leaders};
