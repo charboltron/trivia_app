@@ -32,15 +32,20 @@
 }
 
 th, td, p, input {
-    color:yellow;
     font-family: 'Montserrat';
     /* font-family: 'Bungee Shade'; */
     font-size: 1.2em;
+    /* color:yellow; */
+    color: white;
+    text-shadow: -1px 0 yellow, 
+                  0 1px yellow, 
+                  1px 0 yellow, 
+                  0 -1px yellow;
 }
 
 table, th, td 
 {
-    border: solid 1px yellow;
+    border: solid 1px rgb(255, 255, 127);
     border-collapse: collapse;
     padding: 2px 3px;
     /* align-self: right; */

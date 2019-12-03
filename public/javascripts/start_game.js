@@ -65,6 +65,8 @@ async function start_game(){ //Function is async because of API call
     document.getElementById("start_game_button").style.visibility = 'hidden';
     document.getElementById("guess_buttons").style.visibility = 'visible';
     
+
+    // Log the new game in the database
     game_id = await log_new_game('/log_new_game', {userName: user_signed_in, triviaQuestions: (localStorage.getItem('apiJSON')), totalQuest: total_questions, score:0}, "dummyframe", "POST");
     console.log(`game id is: ${game_id}`);
 
