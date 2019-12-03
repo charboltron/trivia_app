@@ -1,7 +1,7 @@
 
 // you can comment these two lines out if you use the verbose script to pre-load the env vars
-// const dotenv = require('dotenv');
-// dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 // TODO figure how this will work in heroku
 

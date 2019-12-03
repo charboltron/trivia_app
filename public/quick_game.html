@@ -93,6 +93,20 @@
     <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
     <br>
     <button id="start" onclick="start_game()">Start a New Game!</button>
+    
+    <!-- THIS HIDDEN FORM AND IFRAME ARE USED FOR NODE AND DB INTERFACE, DO NOT DELETE, MOVE, OR CHANGE -->
+    <form   id="update_score_form"
+            action="/update_game_score" 
+            method="POST" 
+            target="dummyframe" 
+            style="display: none;">
+        <input type="text" id="updatescore_user_id" name="updatescore_user_id">
+        <input type="text" id="updatescore_score" name="updatescore_score">
+        <button id="hidden_update_score_button_for_db" type="submit"></button>
+    </form>
+    <iframe name="dummyframe" style="display: none;" src="" frameborder="0"></iframe>
+    <!-- THIS HIDDEN FORM AND IFRAME ARE USED FOR NODE AND DB INTERFACE, DO NOT DELETE, MOVE, OR CHANGE -->
+
     <br><br>
     <div id="display_question_number"></div>
     <br>

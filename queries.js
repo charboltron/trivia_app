@@ -115,11 +115,104 @@ const deleteUser = async (user_name) => {
 
 
 
+const logNewGame = async (user_name, trivia, total_questions, score) => {
+    console.log(`logging new game`);
+    var canLogGame = 0;
+    await db.tx(async t => {
+        const result = await t.one(
+            `INSERT INTO scores
+            (usrnm, friend_usrnm, trivia, total_questions, score)
+            VALUES ($1, 'none', $2, $3, $4)
+            RETURNING id`,
+            [user_name, trivia, total_questions, score]
+        );
+        console.log(result);
+        return {result};
+    })
+    .then( async ({result}) => {
+        if ({result}) {
+            console.log(`added game id ${result.id} to scores`)
+            canLogGame = result.id;
+        } else {
+            console.log(`looks like the new game was not logged`);
+        }
+    })
+    .catch(error => {
+        console.log('ERROR:', error); // print the error
+    })
+    return canLogGame;
+}
+
+
+
+const updateGameScore = async (user_name, score, game_id) => {
+    console.log(`updating game score`);
+
+    var canUpdateScore = 0;
+    await db.tx(async t => {
+        const results = await t.one(
+            `UPDATE scores
+            SET score = $3
+            WHERE ( usrnm = $1
+                    AND id = $2 )
+            RETURNING score;`,
+            [user_name, game_id, score]
+        );
+        console.log(results);
+        return {results};
+    })
+    .then( async ({results}) => {
+        if ({results}) {
+            console.log(`game score updated to ${results.score}`);
+            canUpdateScore = results.score;
+        } else {
+            console.log('sigh... I guess were unable to update the game score in the system');
+        }
+    })
+    .catch(error => {
+        console.log(`ERROR: `,error);
+    })
+    return canUpdateScore;
+}
+
+
+
+const qryLeaderboard = async () => {
+    console.log('querying the leaderboard');
+    let leaderboard = 'empty';
+    await db.tx( async t => {
+        const leaders = await t.many(
+            `SELECT usrnm as user, count(id) as number_of_games, sum(score) as total_score
+            FROM scores
+            GROUP BY usrnm
+            ORDER BY total_score DESC;`);
+        return {leaders};
+    })
+    .then( async ({leaders}) => {
+        if ({leaders}) {
+            console.log(`leaderboard generated`);
+            console.log(leaders);
+            leaderboard = leaders;
+        } else {
+            console.log('could not generate leaders, we are in anarchy!');
+        }
+    })
+    .catch(error => {
+        console.log(`ERROR: `,error);
+    })
+    return leaderboard;
+}
+
+
+
 module.exports = {
     createUser,
     userCheckandAdd,
     userSignIn,
-    deleteUser
+    deleteUser,
+    logNewGame,
+    updateGameScore,
+    qryLeaderboard
 }
 
 db.$pool.end  

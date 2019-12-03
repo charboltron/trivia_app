@@ -1,5 +1,5 @@
 #bg {
-    background-image: url('/public/images/must_see.jpg');
+    background-image: url('/images/must_see.jpg');
     width: 100%;
     height: 100%; 
     background-size: 100% 100%;
@@ -11,18 +11,20 @@
     border: 1px solid red;
 }  
 
-h1 {
-    color: whitesmoke;
-    font-family: 'Pacifico';
-    margin-top: 7%;
-    border: 1px solid red;
+.container-fluid {
+    display: grid;
+    width: 100%;
+    /* margin-top: 25%; */
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.col-sm-6 {
-    text-align: center;
-    /* border: 2px solid; */
-    padding: 1.5%;
-    margin: 4% 25% 0% 25%;  
-    position: relative;
-    border: 1px solid red;
+#contentrow {
+    margin-top: 15%;
+}
+
+#leaderframe {
+    color: whitesmoke;
+    background-color: salmon;
+    width: 100%;
 }

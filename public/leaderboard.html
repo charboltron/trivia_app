@@ -13,8 +13,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/leaderboard.js"></script>  
 </head>
+
 <body>
+
     <header>    
         <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="navbar-header">
@@ -82,23 +85,27 @@
             </div>
         </nav>
     </header>
+
     <main>
         <div class="container-fluid">
             <div id="bg">
-                <div class="row content">
-                    <div class="col-sm-3 sidenav">
-                    </div>
-                </div>
-                <div class="col-sm-6"> 
-                        <h1>Leaderboard</h1>
+                <div class="row" id="contentrow" name="contentrow">
+                    <div class="col-sm-3 sidenav"></div>
+                    <div class="col-sm-6">
+
+                        <iframe id="leaderframe" name="leaderframe" src="" frameborder="0"></iframe>
                         
-                </div>
-                <div class="col-sm-3 sidenav">
-                    <!-- PLACE ADS HERE -->
+                        <p id="showData"></p>
+
+                    </div>  
+                    <div class="col-sm-3 sidenav">
+                        <!-- PLACE ADS HERE -->
+                    </div>
                 </div>
             </div>
         </div>
         
     </main>
+
     </body>
 </html>
