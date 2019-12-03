@@ -33,9 +33,6 @@
 
 th, td, p, input {
     font-family: 'Montserrat';
-    /* font-family: 'Bungee Shade'; */
-    font-size: 1.2em;
-    /* color:yellow; */
     color: white;
     text-shadow: -1px 0 yellow, 
                   0 1px yellow, 
@@ -45,9 +42,9 @@ th, td, p, input {
 
 table, th, td 
 {
-    border: solid 1px rgb(255, 255, 127);
+    border: solid 2px rgb(255, 255, 127);
     border-collapse: collapse;
-    padding: 2px 3px;
+    padding: 0em 1em;
     /* align-self: right; */
     text-align: center;
     margin-left: auto;
@@ -55,5 +52,9 @@ table, th, td
 }
 
 th {
-    font-weight:bold;
+    font-size: 1.8em;
+}
+
+td {
+    font-size: 1.3em;
 }

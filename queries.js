@@ -190,7 +190,7 @@ const qryLeaderboard = async () => {
                 OR usrnm = 'test';`
         );
         const leaders = await t.many(
-            `SELECT usrnm as user, count(id) as number_of_games, sum(score) as total_score
+            `SELECT usrnm as user, count(id) as game_count, (sum(score)/count(id)) as avg_score, sum(score) as total_score
             FROM scores
             WHERE usrnm IS NOT NULL AND usrnm <> ''
             GROUP BY usrnm
