@@ -20,11 +20,32 @@
 }
 
 #contentrow {
-    margin-top: 15%;
+    margin-top: 20%;
+}
+
+.col-sm-3, .col-sm-6 {
+    border: 1px solid red;
 }
 
 #leaderframe {
-    color: whitesmoke;
-    background-color: salmon;
     width: 100%;
+}
+
+th, td, p, input {
+    color: chartreuse;
+}
+
+table, th, td 
+{
+    border: solid 1px chartreuse;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    align-self: right;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    font-weight:bold;
 }

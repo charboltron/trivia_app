@@ -8,14 +8,15 @@ function loadLeaderB(){ //Hides the buttons until start game is pressed.
     
     // get_leaders('/leaderboard', {}, "leaderframe", "GET"); // its an older approach, but it checks out
     
-    var leaderJSON;
+    let leaderJSON;
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/leaderboard"); 
     xhr.onload = function(event){ 
         // alert("Success, server responded with: " + event.target.response); // raw response
-        leaderJSON = event.target.response;
-        console.log(leaderJSON)
-        console.log(leaderJSON.length)
+        leaderJSON = JSON.parse(event.target.response);
+        console.log(leaderJSON);
+        console.log(leaderJSON.length);
+        createTableFromJSON(leaderJSON);
     }; 
     xhr.onerror = function(event){
         alert("There was an error getting the leaderboard. Please try again later.")
@@ -26,17 +27,16 @@ function loadLeaderB(){ //Hides the buttons until start game is pressed.
     let formData = new FormData(document.getElementById("myForm")); 
     xhr.send(formData);
     
-    createTableFromJSON(leaderJSON);
     console.log('leaderboard ought to have been generated');
 }
 
 
 
-function createTableFromJSON(leaderJSON) {
+function createTableFromJSON(varJSON) {
     let col = [];
-    for (let i = 0; i < leaderJSON.length; i++) {
-      for (let key in leaderJSON[i]) {
-        if (col.indexOf(key) ===-1) {
+    for (let i = 0; i < varJSON.length; i++) {
+      for (let key in varJSON[i]) {
+        if (col.indexOf(key) === -1) {
           col.push(key);
         }
       }
@@ -48,15 +48,15 @@ function createTableFromJSON(leaderJSON) {
 
     for (let i = 0; i < col.length; i++) {
       let th = document.createElement("th");
-      th.innerHTML = col[i];
+      th.innerHTML = col[i].replace(/_/g," ").toUpperCase();
       tr.appendChild(th);
     }
 
-    for (let i = 0; i < leaderJSON.length; i++) {
+    for (let i = 0; i < varJSON.length; i++) {
       tr = table.insertRow(-1);
       for (let j = 0; j < col.length; j++) {
         let tabCell = tr.insertCell(-1);
-        tabCell.innerHTML = leaderJSON[i][col[j]];
+        tabCell.innerHTML = varJSON[i][col[j]];
       }
     }
 
