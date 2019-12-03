@@ -16,3 +16,4 @@ async function set_default_game() {
         document.getElementById("hidden_quick_game_button").click();
     }
 }
+

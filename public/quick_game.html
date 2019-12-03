@@ -9,16 +9,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="stylesheets/quick_game_grid.css">
     <link rel="stylesheet" href="stylesheets/quick_game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascripts/start_game.js"></script>  
-    <!-- <script type="text/javascript" src="../app.js"></script> -->
-    <!-- <script type="text/javascript" src="javascripts/buttons.js"></script>   -->
+    <!-- <script type="text/javascript" src="javascripts/start_game.js"></script>   -->
        
 </head>
-<body onload="load()">
+<body>
     <header>
         <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="navbar-header">
@@ -87,13 +86,68 @@
         </nav>
     </header>
 
-    
     <div id="bg"></div>
-    <h1>Quick Game</h1>
-    <input type="image" class="sound_icon" src="images/sound_icon.png" id="toggle_sound" onclick="toggle_sound()"></button>
-    <br>
-    <button id="start" onclick="start_game()">Start a New Game!</button>
-    
+
+    <div class="grid-container">
+            
+        <div class="top">
+             <div id="display_score" class="display_score"></div>  
+        </div>
+
+        <div class="left-side">
+            <input type="image" class="sound_icon" src="images/sound_icon_off_white.png" id="toggle_sound"
+                onclick="toggle_sound()">
+            </button>
+        </div>
+        <div class="right-side"></div>
+        <div class="bottom">
+            <div id="display_feedback"></div>
+            <button id="next_question" onclick="display_next_question()" style="visibility: hidden;">Next Question!</button>
+        </div>
+            
+        <div class="game">
+            
+            <div id="display_question_number"></div> 
+            <div id="category" class="category"></div>
+            <div id="timer" class="timer"></div>
+            
+            <div class="central_game_zone" id="central_game_zone">
+                <div id="display_question"></div>
+                <button id="start_game_button" onclick="start_game()">START NEW GAME!</button>   
+                
+                <form action="/game_setup_solo" method="GET">   
+                    <button id="return_game_setup" style="visibility: hidden;">GO TO GAME SETUP</button>
+                </form>
+                <form action="/" method="GET">
+                    <button id="return_home" style="visibility: hidden;">GO HOME</button>
+                </form>   
+            </div>      
+                
+            <div class="guesses" id="guess_buttons" style="visibility: hidden;">
+                <div class="A">
+                    <button id="guess_A" onclick="guess_answer(this.id)">
+                        <div id="A_button_text"></div>
+                    </button>
+                </div>
+                <div class="B">
+                    <button id="guess_B" onclick="guess_answer(this.id)">
+                        <div id="B_button_text"></div>
+                    </button>
+                </div>
+                <div class="C">
+                    <button id="guess_C" onclick="guess_answer(this.id)">
+                        <div id="C_button_text"></div>
+                    </button>
+                </div>
+                <div class="D">
+                    <button id="guess_D" onclick="guess_answer(this.id)">
+                        <div id="D_button_text"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- THIS HIDDEN FORM AND IFRAME ARE USED FOR NODE AND DB INTERFACE, DO NOT DELETE, MOVE, OR CHANGE -->
     <form   id="update_score_form"
             action="/update_game_score" 
@@ -107,45 +161,10 @@
     <iframe name="dummyframe" style="display: none;" src="" frameborder="0"></iframe>
     <!-- THIS HIDDEN FORM AND IFRAME ARE USED FOR NODE AND DB INTERFACE, DO NOT DELETE, MOVE, OR CHANGE -->
 
-    <br><br>
-    <div id="display_question_number"></div>
-    <br>
-    <div id="current_question"> 
-        <div id="category"></div>
-        <br>
-        <div id="difficulty"></div> 
-        <br>
-        <div id="display_question"></div>
-    </div>
-    <br>    
-  
-    <div id="display_choices">
-    </div>
-    <br>
-    <div id="guess_buttons">
-        <button id= "guess_A" onclick="guess_answer(this.id)">
-            <div id="A_button_text"></div>
-        </button>
-        <button id= "guess_B" onclick="guess_answer(this.id)">
-            <div id="B_button_text"></div>
-        </button>
-        <button id= "guess_C" onclick="guess_answer(this.id)">
-            <div id="C_button_text"></div>
-        </button>
-        <button id= "guess_D" onclick="guess_answer(this.id)">
-            <div id="D_button_text"></div>
-        </button>
-    </div>
-    <br>
-    <div id="display_feedback"></div>
-    <br>
-    <div id="display_score"></div>
-    <br>
-    <button id="next_question" onclick="display_next_question()">Next Question</button>
-    <br>
-    <br>
-    <div id="timer"></div>
     <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
-    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav">></audio>      
+    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav"></audio>
+    <audio source id="final_3_seconds" src="./sound/final_3_seconds.wav" type="audio/wav"></audio>
+    <script type="text/javascript" src="javascripts/start_game.js"></script>
+
 </body>
 </html>
