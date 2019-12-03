@@ -32,10 +32,10 @@ html, body, .grid-container { height: 95%; margin: 0; }
 
 .game {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 1.1fr 1.1fr;
   grid-template-rows: .5fr 1fr 1fr;
   grid-template-areas: "question_number category timer" 
-                       "display_question display_question display_question" 
+                       "central_game_zone central_game_zone central_game_zone" 
                        "guesses guesses guesses";
   grid-area: game;
 }
@@ -46,7 +46,7 @@ html, body, .grid-container { height: 95%; margin: 0; }
 
 .timer { grid-area: timer; }
 
-.display_question { grid-area: display_question; }
+.central_game_zone { grid-area: central_game_zone; }
 
 .guesses {
   display: grid;
