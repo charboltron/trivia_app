@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Game Setup-Trivia Night</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
-    <link rel="stylesheet" href="stylesheets/game_setup.css">
+    <link rel="stylesheet" href="stylesheets/solo_mode.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -83,12 +85,13 @@
         </nav>
     </header>
 
-    <div class="header3">Trivia Night!</div>
+    <div id="bg"></div>
+    
+    <h1>Game Setup</h1>
 
     <div id="game_setup_menu">
 
         <form action="/quick_game" method="GET">
-            <div class="header4">Game Setup</div>
     
             <label for="trivia_amount">Select number of questions to answer:</label>
             <!-- <input  type="number" 
@@ -183,7 +186,7 @@
                     name="btnstartgame"
                     id="btnstartgame"
                     onclick="SubmitGameSetup();">
-                    START THE GAME!
+                    Start Game!
             </button>
             <button id="hidden_start_game_button" type="submit" style="display: none;"></button>
         </form>
