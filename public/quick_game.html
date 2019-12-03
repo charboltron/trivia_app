@@ -87,6 +87,7 @@
     </header>
 
     <div id="bg"></div>
+
     <div class="grid-container">
             
         <div class="top">
@@ -146,9 +147,24 @@
             </div>
         </div>
     </div>
-            <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
-            <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav"></audio>
-            <audio source id="final_3_seconds" src="./sound/final_3_seconds.wav" type="audio/wav"></audio>
-            <script type="text/javascript" src="javascripts/start_game.js"></script>  
+
+    <!-- THIS HIDDEN FORM AND IFRAME ARE USED FOR NODE AND DB INTERFACE, DO NOT DELETE, MOVE, OR CHANGE -->
+    <form   id="update_score_form"
+            action="/update_game_score" 
+            method="POST" 
+            target="dummyframe" 
+            style="display: none;">
+        <input type="text" id="updatescore_user_id" name="updatescore_user_id">
+        <input type="text" id="updatescore_score" name="updatescore_score">
+        <button id="hidden_update_score_button_for_db" type="submit"></button>
+    </form>
+    <iframe name="dummyframe" style="display: none;" src="" frameborder="0"></iframe>
+    <!-- THIS HIDDEN FORM AND IFRAME ARE USED FOR NODE AND DB INTERFACE, DO NOT DELETE, MOVE, OR CHANGE -->
+
+    <audio id="audio_correct" source src="./sound/correct.wav" type="audio/wav"></audio>
+    <audio source id="audio_incorrect" src="./sound/incorrect.wav" type="audio/wav"></audio>
+    <audio source id="final_3_seconds" src="./sound/final_3_seconds.wav" type="audio/wav"></audio>
+    <script type="text/javascript" src="javascripts/start_game.js"></script>
+
 </body>
 </html>
