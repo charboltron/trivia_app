@@ -1,40 +1,52 @@
 # Details
 
-Date : 2019-11-27 11:24:40
+Date : 2019-12-03 14:33:57
 
 Directory c:\Users\thoma\Documents\Fall 2019\Full-Stack\trivia_app
 
-Total : 25 files,  9179 codes, 273 comments, 205 blanks, all 9657 lines
+Total : 37 files,  6948 codes, 288 comments, 441 blanks, all 7677 lines
 
 [summary](results.md)
 
 ## Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| [app.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/app.js) | JavaScript | 24 | 11 | 12 | 47 |
-| [config.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/config.js) | JavaScript | 13 | 3 | 2 | 18 |
-| [package-lock.json](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/package-lock.json) | JSON | 4,108 | 0 | 1 | 4,109 |
-| [package.json](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/package.json) | JSON | 30 | 0 | 1 | 31 |
-| [public\about.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/about.html) | HTML | 84 | 3 | 3 | 90 |
-| [public\chads_sign_up.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/chads_sign_up.html) | HTML | 35 | 3 | 5 | 43 |
-| [public\game_setup.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/game_setup.html) | HTML | 120 | 10 | 14 | 144 |
-| [public\index.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/index.html) | HTML | 66 | 8 | 0 | 74 |
+| [app.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/app.js) | JavaScript | 142 | 19 | 50 | 211 |
+| [config.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/config.js) | JavaScript | 15 | 2 | 3 | 20 |
+| [package-lock.json](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/package-lock.json) | JSON | 4,124 | 0 | 1 | 4,125 |
+| [package.json](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/package.json) | JSON | 31 | 0 | 1 | 32 |
+| [public\about_game.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/about_game.html) | HTML | 119 | 2 | 2 | 123 |
+| [public\about_team.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/about_team.html) | HTML | 117 | 2 | 1 | 120 |
+| [public\delete_account.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/delete_account.html) | HTML | 97 | 0 | 2 | 99 |
+| [public\game_setup.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/game_setup.html) | HTML | 171 | 12 | 13 | 196 |
+| [public\head_to_head.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/head_to_head.html) | HTML | 89 | 1 | 3 | 93 |
+| [public\index.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/index.html) | HTML | 118 | 6 | 1 | 125 |
 | [public\javascripts\chad_postgreSQL_test_1.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/chad_postgreSQL_test_1.js) | JavaScript | 26 | 22 | 6 | 54 |
-| [public\javascripts\formcontrols.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/formcontrols.js) | JavaScript | 31 | 1 | 7 | 39 |
-| [public\javascripts\quick_game_default.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/quick_game_default.js) | JavaScript | 16 | 0 | 2 | 18 |
-| [public\javascripts\start_game.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/start_game.js) | JavaScript | 165 | 54 | 46 | 265 |
-| [public\json\trivia.json](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/json/trivia.json) | JSON | 3,830 | 0 | 0 | 3,830 |
-| [public\leaderboard.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/leaderboard.html) | HTML | 65 | 2 | 4 | 71 |
-| [public\quick_game.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/quick_game.html) | HTML | 96 | 3 | 4 | 103 |
-| [public\sign_up.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/sign_up.html) | HTML | 52 | 1 | 4 | 57 |
-| [public\solo_mode.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/solo_mode.html) | HTML | 134 | 11 | 14 | 159 |
-| [public\stylesheets\about.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/about.css) | CSS | 42 | 50 | 12 | 104 |
-| [public\stylesheets\game_setup.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/game_setup.css) | CSS | 43 | 1 | 7 | 51 |
-| [public\stylesheets\game_signup.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/game_signup.css) | CSS | 23 | 0 | 6 | 29 |
-| [public\stylesheets\home.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/home.css) | CSS | 64 | 25 | 23 | 112 |
-| [public\stylesheets\leaderboard.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/leaderboard.css) | CSS | 25 | 1 | 2 | 28 |
-| [public\stylesheets\quick_game.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/quick_game.css) | CSS | 18 | 6 | 3 | 27 |
-| [public\stylesheets\solo_mode.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/solo_mode.css) | CSS | 37 | 1 | 6 | 44 |
-| [queries.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/queries.js) | JavaScript | 32 | 57 | 21 | 110 |
+| [public\javascripts\delete_account.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/delete_account.js) | JavaScript | 3 | 1 | 2 | 6 |
+| [public\javascripts\game_setup.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/game_setup.js) | JavaScript | 42 | 4 | 9 | 55 |
+| [public\javascripts\leaderboard.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/leaderboard.js) | JavaScript | 67 | 3 | 21 | 91 |
+| [public\javascripts\quick_game_default.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/quick_game_default.js) | JavaScript | 16 | 0 | 4 | 20 |
+| [public\javascripts\signin_stuff.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/signin_stuff.js) | JavaScript | 12 | 1 | 6 | 19 |
+| [public\javascripts\start_game.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/javascripts/start_game.js) | JavaScript | 309 | 49 | 99 | 457 |
+| [public\leaderboard.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/leaderboard.html) | HTML | 102 | 2 | 5 | 109 |
+| [public\quick_game.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/quick_game.html) | HTML | 153 | 3 | 14 | 170 |
+| [public\sign_in.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/sign_in.html) | HTML | 114 | 0 | 7 | 121 |
+| [public\sign_in_success.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/sign_in_success.html) | HTML | 74 | 2 | 9 | 85 |
+| [public\sign_up.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/sign_up.html) | HTML | 106 | 1 | 5 | 112 |
+| [public\sign_up_success.html](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/sign_up_success.html) | HTML | 109 | 2 | 2 | 113 |
+| [public\stylesheets\about_game.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/about_game.css) | CSS | 42 | 50 | 12 | 104 |
+| [public\stylesheets\about_team.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/about_team.css) | CSS | 40 | 25 | 11 | 76 |
+| [public\stylesheets\game_setup.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/game_setup.css) | CSS | 41 | 1 | 12 | 54 |
+| [public\stylesheets\game_signin.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/game_signin.css) | CSS | 45 | 1 | 7 | 53 |
+| [public\stylesheets\game_signin_success.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/game_signin_success.css) | CSS | 24 | 0 | 5 | 29 |
+| [public\stylesheets\game_signup.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/game_signup.css) | CSS | 29 | 0 | 6 | 35 |
+| [public\stylesheets\head_to_head.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/head_to_head.css) | CSS | 19 | 5 | 4 | 28 |
+| [public\stylesheets\index.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/index.css) | CSS | 73 | 22 | 12 | 107 |
+| [public\stylesheets\leaderboard.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/leaderboard.css) | CSS | 45 | 2 | 7 | 54 |
+| [public\stylesheets\quick_game.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/quick_game.css) | CSS | 113 | 18 | 18 | 149 |
+| [public\stylesheets\quick_game_grid.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/quick_game_grid.css) | CSS | 46 | 2 | 19 | 67 |
+| [public\stylesheets\quick_game_style.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/quick_game_style.css) | CSS | 47 | 1 | 18 | 66 |
+| [public\stylesheets\solo_mode.css](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/public/stylesheets/solo_mode.css) | CSS | 50 | 15 | 15 | 80 |
+| [queries.js](file:///c%3A/Users/thoma/Documents/Fall%202019/Full-Stack/trivia_app/queries.js) | JavaScript | 178 | 12 | 29 | 219 |
 
 [summary](results.md)
