@@ -33,6 +33,8 @@
 
 th, td, p, input {
     color: chartreuse;
+    font-family: 'Bungee Shade';
+    font-size: 1.2em;
 }
 
 table, th, td 
