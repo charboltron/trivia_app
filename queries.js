@@ -1,18 +1,35 @@
 const pgp = require('pg-promise')(/* options */)
-const { PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD, PGSSLMODE, PGREQUIRESSL } = require('./config')
+const { PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD, PGSSLMODE, PGREQUIRESSL, DATABASE_URL } = require('./config')
 
-const cn = {
-  database: PGDATABASE,
-  host: PGHOST,
-  port: PGPORT,
-  user: PGUSER,
-  password: PGPASSWORD,
-  sslmode: PGSSLMODE,
-  ssl: PGREQUIRESSL
-}
-const db = pgp(cn)
+// ----------------------------------------
+// alternative method for contacting the db
+// ----------------------------------------
+// const cn = {
+//   database: PGDATABASE,
+//   host: PGHOST,
+//   port: PGPORT,
+//   user: PGUSER,
+//   password: PGPASSWORD,
+//   sslmode: PGSSLMODE,
+//   ssl: PGREQUIRESSL
+// }
+// const db = pgp(cn); 
 
+// --------------------------------------------------
+// experimental method for connecting to the database
+// DOES NOT WORK
+// --------------------------------------------------
+// const { Pool } = require('pg');
+// const db = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: true
+// });
 
+// -----------------------------------------------
+// preferred method for connecting to the database
+// -----------------------------------------------
+const cn2 = DATABASE_URL;
+const db = pgp(cn2); 
 
 const createUser = async (user_name, user_pwd) => {
     // const db = pgp(cn)
