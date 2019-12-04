@@ -75,11 +75,11 @@ button {
  }
 
  #solo_game:hover:after {
-    content:"Choose the Number of Questions, Category and Difficulty.";
+    content:"Choose Question Count, Category, and Difficulty.";
  }
 
  #friend_game:hover:after {
-    content:"Face Off against Friend/Competitor in Quick Game";
+    content:"Play against Friend/Competitor in Custom Game";
  }
 
  #quick_game:hover, #solo_game:hover, #friend_game:hover {

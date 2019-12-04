@@ -20,9 +20,9 @@ h1 {
     color: white;
     font-family: Pacifico; 
     text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
-    margin: 4% auto 1%;
+    margin: 11% auto 1%;
     text-align: center;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 
@@ -42,7 +42,7 @@ form {
     min-width: 300px;
     margin: auto;
     
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 
