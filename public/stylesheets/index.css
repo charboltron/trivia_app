@@ -33,27 +33,6 @@ h1 {
     position: relative;
 }
 
-/* button[type=submit],[type=button] {
-    font-family: 'Montserrat';
-    font-size: 2.5em;
-    background-color: crimson;
-    color: white;
-    border: 2.5px solid white;
-    border-radius: 7px;
-    padding: 3%;
-    margin: 1% auto;
-    width: 30rem;
-}
-
-button[type=submit]:hover,[type=button]:hover {
-    background-color: white;
-    color: crimson;
-    border: 2.5px solid crimson;
-    border-radius: 7px;
-    padding: 3%;
-    margin: 2% auto;
-} */
-
 button {
     font-family: 'Montserrat';
     font-size: 2.5em;
@@ -75,7 +54,11 @@ button {
  }
 
  #solo_game:hover:after {
+<<<<<<< HEAD:public/stylesheets/home.css
     content:"Choose Question Count, Category, and Difficulty.";
+=======
+    content:"Choose Question Count, Category and Difficulty.";
+>>>>>>> 5ef9365cef93cdff6a82a27618a3e67aa6c99f89:public/stylesheets/index.css
  }
 
  #friend_game:hover:after {
@@ -88,12 +71,6 @@ button {
     color: red;
     border: 2.5px solid red;
   }
-
-
-  
-
-
-
 
 footer {
     background-color: #555;
@@ -109,3 +86,26 @@ footer {
     overflow: hidden;
     text-align: center;
   }
+
+/* Deprecated */
+
+/* button[type=submit],[type=button] {
+    font-family: 'Montserrat';
+    font-size: 2.5em;
+    background-color: crimson;
+    color: white;
+    border: 2.5px solid white;
+    border-radius: 7px;
+    padding: 3%;
+    margin: 1% auto;
+    width: 30rem;
+}
+
+button[type=submit]:hover,[type=button]:hover {
+    background-color: white;
+    color: crimson;
+    border: 2.5px solid crimson;
+    border-radius: 7px;
+    padding: 3%;
+    margin: 2% auto;
+} */

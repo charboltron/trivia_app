@@ -1,7 +1,0 @@
--- make the tables in the database
-CREATE TABLE IF NOT EXISTS users (
-    usrnm text PRIMARY KEY NOT NULL,
-    usrpw text
-);
-
-

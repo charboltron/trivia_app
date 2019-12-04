@@ -65,3 +65,6 @@ typings/
 
 # VIM persistent undo files
 .un*
+
+# VS Code Counter files
+.VSCodeCounter/

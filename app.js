@@ -7,10 +7,14 @@ var path = require('path');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join('./public')));
 
+
+
 app.get('/', function (req, res) {
   console.log('home button pressed');
   res.sendFile(__dirname+'/public/index.html');
 })
+
+
 
 app.get('/quick_game', function (req, res) {
     res.sendFile(__dirname+'/public/quick_game.html');
@@ -111,7 +115,6 @@ app.post('/sign_in_submit', async (req, res) =>{
   var user_pwd  =  req.body.user_pwd.trim();
   console.log(`attempting to sign in user: ${user_name}`);
   
-  // fix code starting here
   var userSignedIn = await db.userSignIn(user_name, user_pwd);
   console.log(`userSignedIn value is 1 if correctly signed in: ${userSignedIn}`);
 
@@ -149,6 +152,56 @@ app.post('/delete_user_account', async (req, res) =>{
 app.get('/', function (req, res) {
   console.log('home button pressed');
   res.sendFile(__dirname+'/public/index.html');
+})
+
+
+
+app.post('/log_new_game', async (req, res) => {
+  var user_name = req.body.userName.trim();
+  var trivia = req.body.triviaQuestions;
+  var total_questions = req.body.totalQuest;
+  var score = req.body.score;
+  var newGameLogged = await db.logNewGame(user_name, trivia, total_questions, score);  
+  if (newGameLogged != 0) {
+    console.log(`return from logNewGame, successfully added game id: ${newGameLogged}`);
+    req.app.locals.current_game_id = newGameLogged;
+    console.log(`app local variable current_game_id is: ${req.app.locals.current_game_id}`);
+    // res.send(`<script>game_id = ${newGameLogged};</script>;`);
+    // res.json({game_id : newGameLogged});
+    // res.format({'text/plain': function() { res.write(newGameLogged.toString()); }});
+    // res.write(newGameLogged.toString());
+    // res.end;
+    // console.log(res);
+  }
+})
+
+
+
+app.post('/update_game_score', async (req, res) => {
+  var db_user_name = req.body.updatescore_user_id;
+  var db_score = req.body.updatescore_score;
+  var db_game_id = req.app.locals.current_game_id;
+  console.log(`user name is ${db_user_name}`);
+  console.log(`score is ${db_score}`);
+  console.log(`game id is: ${db_game_id}`);
+  var gameScoreUpdated = await db.updateGameScore(db_user_name, db_score, db_game_id);
+  if (gameScoreUpdated != 0) {
+    console.log(`return from newGameScoreUpdated, successfully updated score to: ${gameScoreUpdated}`);
+  } else {
+    console.log('returned from gameScoreUpdated, there may be a problem')
+  }
+})
+
+
+
+app.get('/leaderboard', async (req, res) => {
+  console.log('get leaderboard route');
+  var leaders = await db.qryLeaderboard();
+  console.log(`Witness... the leaders!`);
+  console.log(leaders);
+  // res.setHeader('Content-Type', 'application/json');
+  res.json(leaders);
+
 })
 
 

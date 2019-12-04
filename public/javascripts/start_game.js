@@ -27,6 +27,7 @@ var sound = false;
 var trivia;
 var apiURL;
 var user_signed_in;
+var game_id;
 
 //---------------------------------------
 //Onclick Function calls from HTML
@@ -58,10 +59,17 @@ async function start_game(){ //Function is async because of API call
     started = true;
     guessed = false;
     
+
+
     //Show the buttons on the screen and hide start button
     document.getElementById("start_game_button").style.visibility = 'hidden';
     document.getElementById("guess_buttons").style.visibility = 'visible';
     
+
+    // Log the new game in the database
+    game_id = await log_new_game('/log_new_game', {userName: user_signed_in, triviaQuestions: (localStorage.getItem('apiJSON')), totalQuest: total_questions, score:0}, "dummyframe", "POST");
+    console.log(`game id is: ${game_id}`);
+
     display_next_question();
   }
 
@@ -123,6 +131,11 @@ function guess_answer(button_id){
         calculate_incorrect_answer(button_id);
     }
     document.getElementById("display_score").innerHTML = `SCORE: ${score}`;
+
+
+    //Update score in db
+    update_game_score(user_signed_in,score);
+    console.log("score updated in the database");
 
     document.getElementById("next_question").style.visibility = 'visible';
 }
@@ -188,6 +201,8 @@ function shuffle(array) {
   }
   return array;
 }
+
+
 
 function display_question_buttons(){
     
@@ -401,4 +416,44 @@ function calculate_incorrect_answer(button_id){
       chime.play(); 
   }
 
+}
+
+
+
+//---------------------------------------
+// DB Interface Functions
+//---------------------------------------
+
+function log_new_game(path, params, target, method) {  
+  console.log('inside the log_new_game function');
+  const form_db = document.createElement('form');
+  form_db.method = method;
+  form_db.action = path;
+  form_db.target = target;
+
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+
+      form_db.appendChild(hiddenField);
+    }
+  }
+
+  document.body.appendChild(form_db);
+  form_db.submit();
+  // alert('log_new_game post function may be working')
+}
+
+
+
+function update_game_score(user_signed_in,score) {
+  console.log("inside the update game score function");
+  document.getElementById("updatescore_user_id").value = user_signed_in;
+  document.getElementById("updatescore_score").value = score;
+  console.log(`form user id is ${document.getElementById("updatescore_user_id").value}`);
+  console.log(`form score is${document.getElementById("updatescore_score").value}`);
+  document.getElementById("hidden_update_score_button_for_db").click();
 }
