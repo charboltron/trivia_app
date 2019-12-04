@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Team-Trivia Night</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <title>Error</title>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
-    <link rel="stylesheet" href="stylesheets/about_team.css">
+    <link rel="stylesheet" href="stylesheets/error.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <header>
+    <header>    
         <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
@@ -72,38 +72,30 @@
         </div>
     </nav>
     </header>
+  
     <main>
-     <div id="bg"></div>
-     <!-- <h1>Team</h1> -->
-     <div class="row justify-content-center">
-        <div class="card">
-                <img class="card-img-top" src="images/profile/chaz_detroit_lake.jpg" alt="Charles Bolton">
-                <div class="card-body">
-                    <h4 class="card-title">Charles Bolton</h4>
-                    <p class="card-text">Current Favorite Category: Music.</p>
-                    <a class="fa fa-github" href="https://github.com/charboltron/" style="font-size:36px;color:black"></a>
-                    <!-- <i class="fa fa-linkedin-square" href="" style="font-size:36px;color: blue"></i> -->
-                </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="images/profile/tom_lancaster1.JPG" alt="Tom Lancaster">
-            <div class="card-body">
-                <h4 class="card-title">Tom Lancaster</h4>
-                <p class="card-text">Joyfully Relentless. Relentlessly Joyful.</p>
-                <a class="fa fa-github" href="https://github.com/tlan2" style="font-size:36px;color:black"></a>
-                <a class="fa fa-linkedin-square" href="https://www.linkedin.com/in/thomasmorelancaster/" style="font-size:36px;color:blue"></a>
+        <div id="bg"></div>
+            <div class="grid-container">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="central_zone">
+                        
+                        <div class="message" id="error_msg"> 
+                            <h1>Hmm, that's an error.. Sorry about that.
+                            </h1>
+                        </div> 
+                
+                        <div class="home_button">
+                        <form action="/" method="get">
+                            <button id="return_home" type="submit">Return to Home Page</button>
+                        </form>   
+                        </div>
+                        <div class="right-side"></div>
+                        <div class="left-side"></div>
+
+                    </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="images/profile/tad_cholleson1.png" alt="Chad Tolleson">
-            <div class="card-body">
-                <h4 class="card-title">Chad M. Tolleson</h4>
-                <p class="card-text">Seeking Nontrivial Employment.</p>
-                <a class="fa fa-github" href="https://github.com/tollesonpdx" style="font-size:36px;color:black"></a>
-                <a class="fa fa-linkedin-square" href="https://www.linkedin.com/in/chad-m-tolleson/" style="font-size:36px;color:blue"></a>
-            </div>
-        </div>
-    </div>
+        
     </main>
-</body>
+    </body>
 </html>

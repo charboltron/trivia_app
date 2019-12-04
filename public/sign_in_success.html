@@ -74,33 +74,28 @@
     </header>
   
     <main>
-        <div class="container-fluid">
-            <div id="signinsuccessmsg">
-                <div class="row content">
-                    <div class="col-sm-3 sidenav">
+        <div id="bg"></div>
+            <div class="grid-container">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="central_zone">
+                        
+                        <div class="message" id="sign_in_success_msg"> 
+                            <h1>Thanks for signing in! Now you can play
+                                games with your friends...<br> or even strangers.
+                            </h1>
+                        </div> 
+                
+                        <div class="home_button">
+                        <form action="/" method="get">
+                            <button id="return_home" type="submit">Return to Home Page</button>
+                        </form>   
+                        </div>
+                        <div class="right-side"></div>
+                        <div class="left-side"></div>
+
                     </div>
-                </div>
-
-                <div class="message"> 
-                    <h1>Thanks for signing in! Now you can play 
-                        games with your friends...<br> or even strangers.
-                    </h1>
-                </div>
-
-                <form action="/" method="get">
-                    <button class="btn btn-lg btn-secondary btn-block"
-                            id="return_home"
-                            type="submit">
-                            Return to Home Page
-                    </button>
-                </form>
-
-                <div class="col-sm-3 sidenav">
-                    <!-- PLACE ADS HERE -->
-                </div>
-
             </div>
-        </div>
         
     </main>
     </body>

@@ -7,20 +7,14 @@ var path = require('path');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join('./public')));
 
-
-
 app.get('/', function (req, res) {
   console.log('home button pressed');
   res.sendFile(__dirname+'/public/index.html');
 })
 
-
-
 app.get('/quick_game', function (req, res) {
     res.sendFile(__dirname+'/public/quick_game.html');
   })
-
-
 
 app.get('/game_setup_solo', function (req, res) {
 
@@ -28,20 +22,10 @@ app.get('/game_setup_solo', function (req, res) {
   res.sendFile(__dirname+'/public/game_setup.html');
 })
 
-
-
-// app.get('/solo_game', function (req, res) {
-//   res.sendFile(__dirname+'/public/html/solo_game.html');
-// })
-
-
-
 app.get('/game_setup_friend', function (req, res) {
     res.sendFile(__dirname+'/public/head_to_head.html');
     //res.send('This is where the game setup will be (FRIEND MODE)')
 })
-
-
 
 app.post('/sign_up_submit', async (req, res) =>{ 
   
@@ -108,8 +92,6 @@ app.get('/sign_up_submit', (req, res) => {
   res.sendFile(__dirname+'/public/sign_up.html');
 })
 
-
-
 app.post('/sign_in_submit', async (req, res) =>{ 
   var user_name =  req.body.user_name.replace(/\s/g, '').trim(); 
   var user_pwd  =  req.body.user_pwd.trim();
@@ -125,36 +107,32 @@ app.post('/sign_in_submit', async (req, res) =>{
       <script>window.location.replace('sign_in.html');</script>;
     `);
   } else {
+
     req.app.locals.current_signed_in_user = user_name;
     console.log(`In app.js: setting signed in user to to ${user_name}`)
     res.sendFile(__dirname+'/public/sign_in_success.html');
   }
 })
 
-
-
 app.post('/delete_user_account', async (req, res) =>{ 
-  var user_name = 'Tyler'; //For testing of course
-  //var user_name =  req.body.user_name. However we determine how to do this. 
+  //var user_name = 'Tyler'; //For testing of course
+  var user_name = req.app.locals.current_signed_in_user;
+  console.log(user_name); 
   var userDeleted = await db.deleteUser(user_name);
   console.log(`return from userDeleted in app: User Deleted = ${userDeleted}`);
   if(userDeleted){
-    console.log(`User ${user_name} has been deleted from the database.`);
+    console.log(`User ${req.app.locals.current_signed_in_user} has been deleted from the database.`);
         res.send(`
-      <script>alert('We are sorry to see you go, but we understand. Thanks for joining and you are welcome back anytime. Goodbye!');</script>
+      <script>alert('We are sorry to see you go ${req.app.locals.current_signed_in_user}, but we understand. Thanks for joining and you are welcome back anytime. Goodbye!');</script>
       <script>window.location.replace('index.html');</script>;
     `);
   }
 })
 
-
-
 app.get('/', function (req, res) {
   console.log('home button pressed');
   res.sendFile(__dirname+'/public/index.html');
 })
-
-
 
 app.post('/log_new_game', async (req, res) => {
   var user_name = req.body.userName.trim();
@@ -192,8 +170,6 @@ app.post('/update_game_score', async (req, res) => {
   }
 })
 
-
-
 app.get('/leaderboard', async (req, res) => {
   console.log('get leaderboard route');
   var leaders = await db.qryLeaderboard();
@@ -204,7 +180,18 @@ app.get('/leaderboard', async (req, res) => {
 
 })
 
-
+//Error Handling: DO NOT MOVE ABOVE ANY OTHER MIDDLEWARE OR ALL PAGES WILL BECOME ERRORS!
+//Handle 400
+app.use(function(req, res) {
+  res.status(400);
+  res.sendFile(__dirname+'/public/error.html', 404);
+ });
+ 
+ // Handle 500
+ app.use(function(error, req, res, next) {
+   res.status(500);
+   res.sendFile(__dirname+'/public/error.html', 500); 
+ });
 
 // const PORT = process.env.PORT || 3000; // THIS MOVED TO ENVIRONMENT VARIABLES
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

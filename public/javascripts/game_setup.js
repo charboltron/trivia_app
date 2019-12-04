@@ -6,7 +6,7 @@ function loadSetup() { // checks to ensure the user is already logged in
 
     user_signed_in = localStorage.getItem('userSignedIn');
     console.log(`user_signed_in is: ${user_signed_in}`);
-    alert(`user_signed_in is: ${user_signed_in}`);
+    // alert(`user_signed_in is: ${user_signed_in}`);
     if (!user_signed_in) {
         console.log('user not signed in');
         alert("Please sign in before choosing game settings.");

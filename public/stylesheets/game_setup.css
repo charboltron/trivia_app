@@ -29,6 +29,10 @@ form {
     /* border: 1px solid red; */
 }
 
+#game_setup_menu {
+    
+    margin-top: 10%;
+}
 
 input {
     margin-bottom: 3%;

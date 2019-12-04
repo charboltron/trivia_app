@@ -35,7 +35,7 @@
 } 
 
 .card {
-  margin: 0 3%; /*Does margins between cards*/
+  margin: 5% 3%; /*Does margins between cards*/
   float: none; 
   width: 275px;
   /* height: 375px; */

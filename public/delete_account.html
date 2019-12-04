@@ -9,11 +9,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
-    <link rel="stylesheet" href="stylesheets/game_signup.css">
+    <link rel="stylesheet" href="stylesheets/delete_account.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascripts/delete_account.js"></script>  
 </head>
 <body onload="checkIfSignedIn()">
     <header>    
@@ -74,15 +73,40 @@
     </header>
     
     <main>
-        <form 
-            action="/delete_user_account"
-            method="POST" 
-            id="delete_account">
-        <button 
-            id="delete_my_account"
-            type="submit"    
-        >Click Here to Delete Your Account</button> 
-        </form>
+            <div id="bg"></div>
+            <div class="grid-container">
+                    <div class="top">
+                        <div id="display_user_name"></div>
+                    </div>
+                    <div class="bottom"></div>
+                    <div class="central_zone">
+                    
+                        <div class= "delete_zone" id="delete_zone">
+                            <form 
+                                action="/delete_user_account"
+                                method="POST" 
+                                id="delete_account">
+                            <button 
+                                id="delete_my_account"
+                                type="button"    
+                            >Click Here to Delete Your Account</button> 
+                            <button 
+                                id="hidden_delete_account_button"
+                                type="submit"></button>
+                        </form>
+                    </div>                                     
+                        <div class="home_button">
+                        <form action="/" method="get">
+                            <button id="return_home" type="submit">Return to Home Page</button>
+                        </form>   
+                        </div>
+                        <div class="right-side"></div>
+                        <div class="left-side"></div>
+
+                    </div>
+            </div>
+
     </main>
+    <script type="text/javascript" src="javascripts/delete_account.js"></script>  
     </body>
 </html>
