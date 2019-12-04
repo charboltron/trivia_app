@@ -1,5 +1,5 @@
 const pgp = require('pg-promise')(/* options */)
-const { PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD, PGSSLMODE, PGREQUIRESSL } = require('./config')
+const { PGDATABASE, PGHOST, PGPORT, PGUSER, PGPASSWORD, PGSSLMODE, PGREQUIRESSL, DATABASE_URL } = require('./config')
 
 const cn = {
   database: PGDATABASE,
@@ -10,9 +10,10 @@ const cn = {
   sslmode: PGSSLMODE,
   ssl: PGREQUIRESSL
 }
-const db = pgp(cn)
+// const db = pgp(cn); // alternative method for contacting the db
 
-
+const cn2 = DATABASE_URL;
+const db = pgp(cn2);
 
 const createUser = async (user_name, user_pwd) => {
     // const db = pgp(cn)
