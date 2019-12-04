@@ -37,8 +37,8 @@ app.get('/game_setup_solo', function (req, res) {
 
 
 app.get('/game_setup_friend', function (req, res) {
-    //TODO: res.sendFile(__dirname+'/public/game_setup_friend.html');
-    res.send('This is where the game setup will be (FRIEND MODE)')
+    res.sendFile(__dirname+'/public/head_to_head.html');
+    //res.send('This is where the game setup will be (FRIEND MODE)')
 })
 
 

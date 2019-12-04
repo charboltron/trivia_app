@@ -9,13 +9,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="""> -->
+    <link rel="stylesheet" href="stylesheets/sign_up_success.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <header>    
+<<<<<<< HEAD
+            <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">
+                            <img 
+                            src="images/logo.png" 
+                            width=87px 
+                            height=50px>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" 
+                            type="button" 
+                            data-toggle="collapse" 
+                            data-target="#collapsibleNavbar"
+=======
         <nav id="masternav" class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
@@ -23,6 +38,7 @@
                         src="images/logo.png" 
                         width=87px 
                         height=50px
+>>>>>>> 5ef9365cef93cdff6a82a27618a3e67aa6c99f89
                     >
                 </a>
             </div>
@@ -72,25 +88,27 @@
     </nav>
     </header>
     <main>
-        <div class="container-fluid">
-            <div id="bg">
-                <div class="row content">
-                    <div class="col-sm-3 sidenav">
+        <div id="bg"></div>
+            <div class="grid-container">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    <div class="central_zone">
+                        
+                        <div class="message" id="sign_up_success_msg">
+                            Thanks for signing up! Now you can play
+                            games with your friends or even strangers!
+                        </div> 
+                 
+                        <div class="home_button">
+                        <form action="/" method="get">
+                            <button id="return_home" type="submit">Return to Home Page</button>
+                        </form>   
+                        </div>
+                        
                     </div>
-                </div>
-                <div class="col-sm-6"> 
-                        <h1>Thanks for signing up! Now you can play 
-                            games with your friends or even strangers!</h1>
-                </div>
-                <form action="/" method="get">
-                <button id="return_home" type="submit">Return to Home Page</button>
-                </form>
-                <div class="col-sm-3 sidenav">
-                    <!-- PLACE ADS HERE -->
-                </div>
-            </div>
-        </div>
-        
+                    <div class="right-side"></div>
+                    <div class="left-side"></div>
+                  </div>
     </main>
     </body>
 </html>

@@ -54,7 +54,11 @@ button {
  }
 
  #solo_game:hover:after {
+<<<<<<< HEAD:public/stylesheets/home.css
+    content:"Choose Question Count, Category, and Difficulty.";
+=======
     content:"Choose Question Count, Category and Difficulty.";
+>>>>>>> 5ef9365cef93cdff6a82a27618a3e67aa6c99f89:public/stylesheets/index.css
  }
 
  #friend_game:hover:after {
