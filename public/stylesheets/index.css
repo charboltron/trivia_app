@@ -1,3 +1,5 @@
+/* html { font-size:100%; } */
+
 #bg {
     background-image: url('../images/question_mark.jpg');
     width: 100%;
@@ -25,9 +27,8 @@ h1 {
                   0 -1px yellow;
 }
 
-.col-sm-6 {
+#primary {
     text-align: center;
-    /* border: 2px solid; */
     padding: 1.5%;
     margin: 5% 25% 0% 25%;  
     position: relative;
@@ -83,25 +84,140 @@ footer {
     text-align: center;
   }
 
-/* Deprecated */
+  /* Media Queries: Tablet Landscape */
+@media screen and (min-device-width : 908px) and (max-device-width: 1050px) {
+    h1 {
+        margin: 18% 14% 9% 14%;
+    }
 
-/* button[type=submit],[type=button] {
-    font-family: 'Montserrat';
-    font-size: 2.5em;
-    background-color: crimson;
-    color: white;
-    border: 2.5px solid white;
-    border-radius: 7px;
-    padding: 3%;
-    margin: 1% auto;
-    width: 30rem;
 }
 
-button[type=submit]:hover,[type=button]:hover {
-    background-color: white;
-    color: crimson;
-    border: 2.5px solid crimson;
-    border-radius: 7px;
-    padding: 3%;
-    margin: 2% auto;
-} */
+@media screen and (min-device-width: 762px) and (max-device-width: 906px) {
+    h1 {
+        margin: 30% 18% 9% 14%;
+    }
+
+    button {
+        font-size: 2em;
+        padding: 2%;
+        margin: 1% auto;
+        width: 22rem;
+    }
+
+}
+
+@media screen and (min-device-width: 652px) and  (max-device-width: 761px) {
+    h1 {
+        margin: 30% 10% 9% 10%;
+    }
+
+    button {
+        font-size: 2em;
+        padding: 2%;
+        margin: 1% auto;
+        width: 22rem;
+    }
+}
+
+@media screen and (min-device-width: 620px) and  (max-device-width: 650px) {
+    h1 {
+        margin: 45% 8% 9% 8%;
+    }
+
+    button {
+        font-size: 2em;
+        padding: 2%;
+        margin: 1% auto;
+        width: 22rem;
+    }
+}
+
+@media screen and (min-device-width: 576px) and  (max-device-width: 620px) {
+    h1 {
+        margin: 55% 4% 9% 4%;
+    }
+
+    button {
+        font-size: 1.7em;
+        padding: 4%;
+        margin: 1% auto;
+        width: 16rem;
+    }
+}
+
+@media screen and (min-device-width: 549px) and  (max-device-width: 574px) {
+        h1 {
+            font-size: 1.9rem;
+            margin: 30% 55% 5% 10%;
+        }
+    
+        button {
+            font-size: 1.5em;
+            height: 5rem;
+            padding: 1%;
+            margin: 1% 55% 0% 5%;
+            width: 16rem;
+        }
+}
+
+@media screen and (min-device-width: 442px) and  (max-device-width: 548px) {
+    h1 {
+        font-size: 1.9rem;
+        margin: 30% 55% 5% 10%;
+    }
+
+    button {
+        font-size: 1.3em;
+        height: 5rem;
+        padding: 1%;
+        margin: 1% 55% 0% 5%;
+        width: 14rem;
+    }
+}
+
+@media screen and (min-device-width: 394px) and  (max-device-width: 441px) {
+    h1 {
+        font-size: 1.9rem;
+        margin: 30% 55% 5% 10%;
+    }
+
+    button {
+        font-size: 1.3em;
+        height: 5rem;
+        padding: 1%;
+        margin: 1% 50% 0% 0%;
+        width: 13rem;
+    }
+}
+
+@media screen and (min-device-width: 362px) and  (max-device-width: 393px) {
+    h1 {
+        font-size: 1.9rem;
+        margin: 30% 55% 5% 10%;
+    }
+
+    button {
+        font-size: 1.3em;
+        height: 5rem;
+        padding: 1%;
+        margin: 1% 45% 0% 0%;
+        width: 12rem;
+    }
+    
+}
+
+@media screen and  (max-device-width: 361px) {
+    h1 {
+        font-size: 1.9rem;
+        margin: 40% 55% 5% 10%;
+    }
+
+    button {
+        font-size: 1.3em;
+        height: 5rem;
+        padding: 1%;
+        margin: 1% 45% 0% 0%;
+        width: 11rem;
+    }
+    
+}

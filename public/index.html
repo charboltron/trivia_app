@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>Home-Trivia Night</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <!-- Imported Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <link 
         rel="stylesheet" 
         type="text/css" 
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css"
-    >
+    > 
     <!-- Change Style Sheet Here -->
     <link rel="stylesheet" href="stylesheets/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -82,9 +86,10 @@
                         <div class="col-sm-3 sidenav">
                         </div>
                     </div>
-                    <div class="col-sm-6"> 
+                    <div class="col-sm-6" id="primary"> 
                             <h1>Welcome to 
                                 <span id="trivia_night">Trivia Night</span> !</h1>
+                        <div id = "buttons">
                             <form action="/quick_game" method="get">
                                 <button type="button" id="quick_game" name="quick_game" onclick="">
                                     <span>Quick Game</span>
@@ -106,10 +111,11 @@
                                         id="friend_game"
                                         name="game_setup_friend"
                                         data-hover='Play quick game against a competitor!'' 
-                                        onclick="">
+                                        onclick = "">
                                 <span>Head-to-Head</span>
                                 </button>
                             </form>
+                        </div>
                     </div>
                     <div class="col-sm-3 sidenav">
                         <!-- PLACE ADS HERE -->
