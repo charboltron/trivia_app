@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const { PORT } = require('./config')
-// const db = require('./queries')
+const db = require('./queries')
 
 var path = require('path');
 app.use(express.urlencoded({ extended: true }));
