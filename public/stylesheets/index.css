@@ -43,6 +43,7 @@ button {
     border-radius: 7px;
     padding: 3%;
     margin: 1% auto;
+    height: auto;
     width: 30rem;
 }
 
@@ -82,17 +83,16 @@ footer {
     width: 100%;
     overflow: hidden;
     text-align: center;
-  }
+}
 
   /* Media Queries: Tablet Landscape */
-@media screen and (min-device-width : 908px) and (max-device-width: 1050px) {
+@media screen and (min-width : 908px) and (max-width : 1050px) {
     h1 {
         margin: 18% 14% 9% 14%;
     }
-
 }
 
-@media screen and (min-device-width: 762px) and (max-device-width: 906px) {
+@media screen and (min-width: 762px) and (max-width: 906px) {
     h1 {
         margin: 30% 18% 9% 14%;
     }
@@ -103,10 +103,9 @@ footer {
         margin: 1% auto;
         width: 22rem;
     }
-
 }
 
-@media screen and (min-device-width: 652px) and  (max-device-width: 761px) {
+@media screen and (min-width: 652px) and  (max-width: 761px) {
     h1 {
         margin: 30% 10% 9% 10%;
     }
@@ -119,7 +118,7 @@ footer {
     }
 }
 
-@media screen and (min-device-width: 620px) and  (max-device-width: 650px) {
+@media screen and (min-width: 620px) and  (max-width: 650px) {
     h1 {
         margin: 45% 8% 9% 8%;
     }
@@ -132,7 +131,7 @@ footer {
     }
 }
 
-@media screen and (min-device-width: 576px) and  (max-device-width: 620px) {
+@media screen and (min-width: 576px) and  (max-width: 620px) {
     h1 {
         margin: 55% 4% 9% 4%;
     }
@@ -145,7 +144,7 @@ footer {
     }
 }
 
-@media screen and (min-device-width: 549px) and  (max-device-width: 574px) {
+@media screen and (min-width: 549px) and  (max-width: 574px) {
         h1 {
             font-size: 1.9rem;
             margin: 30% 55% 5% 10%;
@@ -160,7 +159,7 @@ footer {
         }
 }
 
-@media screen and (min-device-width: 442px) and  (max-device-width: 548px) {
+@media screen and (min-width: 442px) and  (max-width: 548px) {
     h1 {
         font-size: 1.9rem;
         margin: 30% 55% 5% 10%;
@@ -173,9 +172,10 @@ footer {
         margin: 1% 55% 0% 5%;
         width: 14rem;
     }
+
 }
 
-@media screen and (min-device-width: 394px) and  (max-device-width: 441px) {
+@media screen and (min-width: 394px) and  (max-width: 441px) {
     h1 {
         font-size: 1.9rem;
         margin: 30% 55% 5% 10%;
@@ -190,7 +190,7 @@ footer {
     }
 }
 
-@media screen and (min-device-width: 362px) and  (max-device-width: 393px) {
+@media screen and (min-width: 362px) and  (max-width: 393px) {
     h1 {
         font-size: 1.9rem;
         margin: 30% 55% 5% 10%;
@@ -203,10 +203,9 @@ footer {
         margin: 1% 45% 0% 0%;
         width: 12rem;
     }
-    
 }
 
-@media screen and  (max-device-width: 361px) {
+@media screen and  (max-width: 361px) {
     h1 {
         font-size: 1.9rem;
         margin: 40% 55% 5% 10%;
