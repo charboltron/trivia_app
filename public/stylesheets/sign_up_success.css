@@ -42,7 +42,8 @@ html, body, .grid-container { height: 95vh; margin: 0; }
 
 
 #bg {
-    background-image: url('../images/thank_you.jpg');
+    /* background-image: url('../images/thank_you.jpg'); */
+    background-image: url('https://ik.imagekit.io/tlan2/trivia/thank_you_G1hM_VMG9.jpg');
     width: 100%;
     height: 100%; 
     background-size: 100% 100%;
