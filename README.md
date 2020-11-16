@@ -1,5 +1,5 @@
 # Trivia Night
-![Title Picture](/title.jpg)
+![Title Picture](https://ik.imagekit.io/tlan2/trivia/title_DMXZ_tRXV.jpg)
 
 ### Website
 [https://best-trivia-game.herokuapp.com/](https://best-trivia-game.herokuapp.com/)
